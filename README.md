@@ -2,11 +2,11 @@
 
 A comprehensive collection of ComfyUI custom nodes updated for transformers compatibility (supports both older versions and 5.0.0+).
 
-This pack aggregates and maintains three popular ComfyUI node suites with necessary updates to ensure compatibility with various transformers library versions. All nodes have been tested and patched where necessary to work with modern dependency versions.
+This pack aggregates and maintains these popular ComfyUI node suites with necessary updates to ensure compatibility with various transformers library versions. All nodes have been tested and patched where necessary to work with modern dependency versions.
 
 ## What's Included
 
-This pack combines three excellent node suites:
+This pack combines these excellent node suites:
 
 ### 1. ComfyUI-ImageReward - Image Quality Scoring
 - **Original Author**: [ZaneA](https://github.com/ZaneA/ComfyUI-ImageReward)

@@ -3,7 +3,7 @@ ComfyUI Updated Pack
 ====================
 A comprehensive collection of ComfyUI custom nodes, updated for compatibility with transformers 5.0.0+.
 
-This pack aggregates and maintains three popular node suites:
+This pack aggregates and maintains these popular node suites:
 - ComfyUI-ImageReward: Image quality scoring with ImageReward and CLIP
 - ComfyUI-SAM2: Segment Anything 2 with GroundingDINO integration
 - WAS Node Suite: Extensive node suite with 180+ nodes
