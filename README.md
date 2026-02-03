@@ -128,18 +128,6 @@ The main update in this pack addresses breaking changes across transformers vers
 - Added aggregated `__init__.py` for seamless node loading
 - Maintained original folder structures for easy updates
 
-## Dependencies
-
-Key dependencies (automatically installed):
-- `transformers` - Supports both older and newer versions
-- `torch>=2.0.0` - Deep learning framework
-- `timm>=0.4.12` - Vision models
-- `opencv-python>=4.7.0` - Image processing
-- `numpy<2` - Array operations
-- `Pillow>=9.4.0` - Image handling
-
-See [requirements.txt](requirements.txt) for the complete list.
-
 ## Credits
 
 This pack is built upon the excellent work of:
@@ -155,12 +143,6 @@ Special thanks to:
 - The open-source community for continued support and contributions
 
 ## License
-
-This pack maintains the original licenses of each included component:
-
-- **ComfyUI-ImageReward**: MIT License
-- **ComfyUI-SAM2**: Apache License 2.0
-- **WAS Node Suite**: MIT License
 
 See individual LICENSE files in each sub-folder for details.
 
