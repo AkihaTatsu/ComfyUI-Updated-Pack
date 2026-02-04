@@ -23,6 +23,11 @@ This pack combines these excellent node suites:
 - **Description**: An extensive suite with 180+ nodes for image processing, text processing, video, and more
 - **Updates**: Patched BLIP module for transformers compatibility (apply_chunking_to_forward, find_pruneable_heads_and_indices, prune_linear_layer)
 
+### 4. ComfyUI ControlNet Aux (MeshGraphormer Only)
+- **Original Author**: [Fannovel16](https://github.com/Fannovel16/comfyui_controlnet_aux)
+- **Description**: MeshGraphormer Hand Refiner for generating hand depth maps (stripped-down version with only MeshGraphormer nodes)
+- **Updates**: Patched custom_mesh_graphormer/modeling/bert/modeling_utils.py for transformers compatibility (prune_linear_layer, find_pruneable_heads_and_indices, apply_chunking_to_forward)
+
 ## Installation
 
 ### For ComfyUI Users
@@ -59,10 +64,10 @@ All nodes are in the `ImageReward` category.
 
 | Node | Description |
 |------|-------------|
-| **ImageRewardLoader** | Load ImageReward or CLIP model for image scoring |
-| **ImageRewardScore** | Score a single image based on a text prompt |
-| **ImageRewardScoreBatch** | Score multiple images and return rankings |
-| **ImageRewardFilter** | Filter images based on quality threshold |
+| **ImageRewardLoader_UpdatedPack** | Load ImageReward or CLIP model for image scoring |
+| **ImageRewardScore_UpdatedPack** | Score a single image based on a text prompt |
+| **ImageRewardScoreBatch_UpdatedPack** | Score multiple images and return rankings |
+| **ImageRewardFilter_UpdatedPack** | Filter images based on quality threshold |
 
 Use Cases: Score generated images based on prompt alignment, rank multiple image variations, filter low-quality outputs, quality-aware image selection in workflows.
 
@@ -72,11 +77,11 @@ All nodes are in the `segment anything` or `segment anything2` category.
 
 | Node | Description |
 |------|-------------|
-| **SAM2ModelLoader** | Load SAM2 segmentation models (tiny/small/base/large) |
-| **GroundingDinoModelLoader** | Load GroundingDINO models for text-based object detection |
-| **GroundingDinoSAM2Segment** | Segment objects in images using text prompts |
-| **InvertMask** | Invert segmentation masks |
-| **IsMaskEmpty** | Check if a mask is empty |
+| **SAM2ModelLoader_UpdatedPack** | Load SAM2 segmentation models (tiny/small/base/large) |
+| **GroundingDinoModelLoader_UpdatedPack** | Load GroundingDINO models for text-based object detection |
+| **GroundingDinoSAM2Segment_UpdatedPack** | Segment objects in images using text prompts |
+| **InvertMask_UpdatedPack** | Invert segmentation masks |
+| **IsMaskEmpty_UpdatedPack** | Check if a mask is empty |
 
 Use Cases: Text-based object segmentation, advanced masking for inpainting, object isolation and removal, precision editing workflows.
 
@@ -103,6 +108,19 @@ This suite contains 180+ nodes across multiple categories:
 
 For a complete list of all WAS Node Suite nodes, see the [original documentation](https://github.com/WASasquatch/was-node-suite-comfyui#current-nodes).
 
+### MeshGraphormer Nodes (ControlNet Aux)
+
+All nodes are in the `Updated Pack/ControlNet Preprocessors/Normal and Depth Estimators` category.
+
+| Node | Description |
+|------|-------------|
+| **MeshGraphormer-DepthMapPreprocessor_UpdatedPack** | Generate hand depth maps using MeshGraphormer |
+| **MeshGraphormer+ImpactDetector-DepthMapPreprocessor_UpdatedPack** | MeshGraphormer with external bounding box detector from Impact Pack |
+
+Use Cases: Hand refinement for image generation, generating accurate hand depth maps for ControlNet, fixing hand details in generated images.
+
+Compatible ControlNet Model: [control_sd15_inpaint_depth_hand_fp16](https://huggingface.co/hr16/ControlNet-HandRefiner-pruned/blob/main/control_sd15_inpaint_depth_hand_fp16.safetensors)
+
 ## What Was Updated
 
 ### Transformers Compatibility (4.x and 5.0.0+)
@@ -121,6 +139,11 @@ The main update in this pack addresses breaking changes across transformers vers
    - Verified compatibility with AutoTokenizer and BertModel imports
    - Uses stable APIs that work across versions
 
+4. **MeshGraphormer Nodes (ControlNet Aux)**:
+   - Patched `custom_mesh_graphormer/modeling/bert/modeling_utils.py`
+   - Added fallback implementations for `prune_linear_layer`, `find_pruneable_heads_and_indices`, `apply_chunking_to_forward`
+   - Removed all other ControlNet preprocessor nodes to keep only MeshGraphormer functionality
+
 ### Structural Changes
 
 - Removed individual `requirements.txt`, `pyproject.toml`, and `.github` folders from sub-packages
@@ -135,6 +158,7 @@ This pack is built upon the excellent work of:
 - **[ZaneA](https://github.com/ZaneA)** - [ComfyUI-ImageReward](https://github.com/ZaneA/ComfyUI-ImageReward)
 - **[neverbiasu](https://github.com/neverbiasu)** - [ComfyUI-SAM2](https://github.com/neverbiasu/ComfyUI-SAM2)
 - **[WASasquatch](https://github.com/WASasquatch)** - [was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui)
+- **[Fannovel16](https://github.com/Fannovel16)** - [comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
 
 Special thanks to:
 - The [ComfyUI](https://github.com/comfyanonymous/ComfyUI) team for the amazing framework
@@ -160,3 +184,5 @@ If you encounter any issues or have suggestions:
 - [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) - Easy node installation and management
 - [Segment Anything 2](https://github.com/facebookresearch/segment-anything-2) - SAM2 official repository
 - [ImageReward](https://github.com/THUDM/ImageReward) - Human preference reward model
+- [MeshGraphormer](https://github.com/microsoft/MeshGraphormer) - Microsoft's MeshGraphormer for hand reconstruction
+- [HandRefiner](https://github.com/wenquanlu/HandRefiner) - Hand refinement using MeshGraphormer

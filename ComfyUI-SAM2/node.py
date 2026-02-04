@@ -274,7 +274,7 @@ class SAM2ModelLoader:
             }
         }
 
-    CATEGORY = "segment_anything2"
+    CATEGORY = "Updated Pack/segment_anything2"
     FUNCTION = "main"
     RETURN_TYPES = ("SAM2_MODEL",)
 
@@ -292,7 +292,7 @@ class GroundingDinoModelLoader:
             }
         }
 
-    CATEGORY = "segment_anything2"
+    CATEGORY = "Updated Pack/segment_anything2"
     FUNCTION = "main"
     RETURN_TYPES = ("GROUNDING_DINO_MODEL",)
 
@@ -318,7 +318,7 @@ class GroundingDinoSAM2Segment:
             }
         }
 
-    CATEGORY = "segment_anything2"
+    CATEGORY = "Updated Pack/segment_anything2"
     FUNCTION = "main"
     RETURN_TYPES = ("IMAGE", "MASK")
 
@@ -360,7 +360,7 @@ class InvertMask:
             }
         }
 
-    CATEGORY = "segment_anything2"
+    CATEGORY = "Updated Pack/segment_anything2"
     FUNCTION = "main"
     RETURN_TYPES = ("MASK",)
 
@@ -382,7 +382,7 @@ class IsMaskEmptyNode:
     RETURN_NAMES = ["boolean_number"]
 
     FUNCTION = "main"
-    CATEGORY = "segment_anything2"
+    CATEGORY = "Updated Pack/segment_anything2"
 
     def main(self, mask):
         return (torch.all(mask == 0).int().item(),)

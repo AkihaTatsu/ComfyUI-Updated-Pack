@@ -2,13 +2,13 @@
 #
 # Copyright 2023 Jordan Thompson (WASasquatch)
 #
-# Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software�?, to
 # deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
 # and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 #
 # The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 #
-# THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# THE SOFTWARE IS PROVIDED “AS IS�? WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
@@ -2462,7 +2462,7 @@ class WAS_Shadow_And_Highlight_Adjustment:
     RETURN_NAMES = ("image","shadow_map","highlight_map")
     FUNCTION = "apply_shadow_and_highlight"
 
-    CATEGORY = "WAS Suite/Image/Adjustment"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Adjustment"
 
     def apply_shadow_and_highlight(self, image, shadow_threshold=30, highlight_threshold=220, shadow_factor=1.5, highlight_factor=0.5, shadow_smoothing=0, highlight_smoothing=0, simplify_isolation=0):
 
@@ -2503,7 +2503,7 @@ class WAS_Image_Pixelate:
     RETURN_NAMES = ("images",)
     FUNCTION = "image_pixelate"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def image_pixelate(self, images, pixelation_size=164, num_colors=16, init_mode='random', max_iterations=100,
                         color_palettes=None, color_palette_mode="Linear", reverse_palette='False', dither='False', dither_mode='FloydSteinberg'):
@@ -2768,7 +2768,7 @@ class WAS_Image_Filters:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_filters"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def image_filters(self, image, brightness, contrast, saturation, sharpness, blur, gaussian_blur, edge_enhance, detail_enhance):
 
@@ -2925,7 +2925,7 @@ class WAS_Lucy_Sharpen:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "sharpen"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def sharpen(self, images, iterations, kernel_size):
 
@@ -3011,7 +3011,7 @@ class WAS_Image_Style_Filter:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_style_filter"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def image_style_filter(self, image, style):
 
@@ -3118,7 +3118,7 @@ class WAS_Image_Crop_Face:
     RETURN_TYPES = ("IMAGE", "CROP_DATA")
     FUNCTION = "image_crop_face"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def image_crop_face(self, image, cascade_xml=None, crop_padding_factor=0.25):
         return self.crop_face(tensor2pil(image), cascade_xml, crop_padding_factor)
@@ -3254,7 +3254,7 @@ class WAS_Image_Paste_Face_Crop:
     RETURN_NAMES = ("IMAGE", "MASK_IMAGE")
     FUNCTION = "image_paste_face"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def image_paste_face(self, image, crop_image, crop_data=None, crop_blending=0.25, crop_sharpening=0):
 
@@ -3358,7 +3358,7 @@ class WAS_Image_Crop_Location:
     RETURN_TYPES = ("IMAGE", "CROP_DATA")
     FUNCTION = "image_crop_location"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def image_crop_location(self, image, top=0, left=0, right=256, bottom=256):
         image = tensor2pil(image)
@@ -3404,7 +3404,7 @@ class WAS_Image_Crop_Square_Location:
     RETURN_TYPES = ("IMAGE", "CROP_DATA")
     FUNCTION = "image_crop_location"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def image_crop_location(self, image, x=256, y=256, size=512):
 
@@ -3457,7 +3457,7 @@ class WAS_Image_Tile_Batch:
     RETURN_NAMES = ("IMAGES",)
     FUNCTION = "tile_image"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def tile_image(self, image, num_tiles=6):
         image = tensor2pil(image.squeeze(0))
@@ -3501,7 +3501,7 @@ class WAS_Image_Paste_Crop:
     RETURN_NAMES = ("IMAGE", "MASK")
     FUNCTION = "image_paste_crop"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def image_paste_crop(self, image, crop_image, crop_data=None, crop_blending=0.25, crop_sharpening=0):
 
@@ -3610,7 +3610,7 @@ class WAS_Image_Paste_Crop_Location:
     RETURN_NAMES = ("IMAGE", "MASK")
     FUNCTION = "image_paste_crop_location"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def image_paste_crop_location(self, image, crop_image, top=0, left=0, right=256, bottom=256, crop_blending=0.25, crop_sharpening=0):
         result_image, result_mask = self.paste_image(tensor2pil(image), tensor2pil(crop_image), top, left, right, bottom, crop_blending, crop_sharpening)
@@ -3692,7 +3692,7 @@ class WAS_Image_Grid_Image_Batch:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "smart_grid_image"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def smart_grid_image(self, images, number_of_columns=6, max_cell_size=256, add_border=False, border_red=255, border_green=255, border_blue=255, border_width=3):
 
@@ -3772,7 +3772,7 @@ class WAS_Image_Grid_Image:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "create_grid_image"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def create_grid_image(self, images_path, pattern_glob="*", include_subfolders="false", number_of_columns=6,
                             max_cell_size=256, border_width=3, border_red=0, border_green=0, border_blue=0):
@@ -3891,7 +3891,7 @@ class WAS_Image_Morph_GIF:
     RETURN_NAMES = ("image_a_pass","image_b_pass","filepath_text","filename_text")
     FUNCTION = "create_morph_gif"
 
-    CATEGORY = "WAS Suite/Animation"
+    CATEGORY = "Updated Pack/WAS Suite/Animation"
 
     def create_morph_gif(self, image_a, image_b, transition_frames=10, still_image_delay_ms=10, duration_ms=0.1, loops=0, max_size=512,
                             output_path="./ComfyUI/output", filename="morph", filetype="GIF"):
@@ -3961,7 +3961,7 @@ class WAS_Image_Morph_GIF_Writer:
     RETURN_NAMES = ("image_pass","filepath_text","filename_text")
     FUNCTION = "write_to_morph_gif"
 
-    CATEGORY = "WAS Suite/Animation/Writer"
+    CATEGORY = "Updated Pack/WAS Suite/Animation/Writer"
 
     def write_to_morph_gif(self, image, transition_frames=10, image_delay_ms=10, duration_ms=0.1, loops=0, max_size=512,
                             output_path="./ComfyUI/output", filename="morph"):
@@ -4032,7 +4032,7 @@ class WAS_Image_Morph_GIF_By_Path:
     RETURN_NAMES = ("filepath_text","filename_text")
     FUNCTION = "create_morph_gif"
 
-    CATEGORY = "WAS Suite/Animation"
+    CATEGORY = "Updated Pack/WAS Suite/Animation"
 
     def create_morph_gif(self, transition_frames=30, still_image_delay_ms=2500, duration_ms=0.1, loops=0, max_size=512,
                             input_path="./ComfyUI/output", input_pattern="*", output_path="./ComfyUI/output", filename="morph", filetype="GIF"):
@@ -4118,7 +4118,7 @@ class WAS_Image_Blending_Mode:
     RETURN_NAMES = ("image",)
     FUNCTION = "image_blending_mode"
 
-    CATEGORY = "WAS Suite/Image"
+    CATEGORY = "Updated Pack/WAS Suite/Image"
 
     def image_blending_mode(self, image_a, image_b, mode='add', blend_percentage=1.0):
 
@@ -4197,7 +4197,7 @@ class WAS_Image_Blend:
     RETURN_NAMES = ("image",)
     FUNCTION = "image_blend"
 
-    CATEGORY = "WAS Suite/Image"
+    CATEGORY = "Updated Pack/WAS Suite/Image"
 
     def image_blend(self, image_a, image_b, blend_percentage):
 
@@ -4238,7 +4238,7 @@ class WAS_Image_Monitor_Distortion_Filter:
     RETURN_NAMES = ("image",)
     FUNCTION = "image_monitor_filters"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def image_monitor_filters(self, image, mode="Digital Distortion", amplitude=5, offset=5):
 
@@ -4286,7 +4286,7 @@ class WAS_Image_Perlin_Noise:
     RETURN_NAMES = ("image",)
     FUNCTION = "perlin_noise"
 
-    CATEGORY = "WAS Suite/Image/Generate/Noise"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Generate/Noise"
 
     def perlin_noise(self, width, height, scale, octaves, persistence, seed):
 
@@ -4322,7 +4322,7 @@ class WAS_Image_Perlin_Power_Fractal:
     RETURN_NAMES = ("image",)
     FUNCTION = "perlin_power_fractal"
 
-    CATEGORY = "WAS Suite/Image/Generate/Noise"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Generate/Noise"
 
     def perlin_power_fractal(self, width, height, scale, octaves, persistence, lacunarity, exponent, seed):
 
@@ -4359,7 +4359,7 @@ class WAS_Image_Voronoi_Noise_Filter:
     RETURN_NAMES = ("image",)
     FUNCTION = "voronoi_noise_filter"
 
-    CATEGORY = "WAS Suite/Image/Generate/Noise"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Generate/Noise"
 
     def voronoi_noise_filter(self, width, height, density, modulator, seed, flat="False", RGB_output="True"):
 
@@ -4397,7 +4397,7 @@ class WAS_Image_Power_Noise:
     RETURN_NAMES = ("image",)
     FUNCTION = "power_noise"
 
-    CATEGORY = "WAS Suite/Image/Generate/Noise"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Generate/Noise"
 
     def power_noise(self, width, height, frequency, attenuation, noise_type, seed):
 
@@ -4564,7 +4564,7 @@ class WAS_Image_To_Noise:
     OUTPUT_IS_LIST = (False,)
     FUNCTION = "image_to_noise"
 
-    CATEGORY = "WAS Suite/Image/Generate/Noise"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Generate/Noise"
 
     def image_to_noise(self, images, num_colors, black_mix, gaussian_mix, brightness, output_mode, seed):
 
@@ -4629,7 +4629,7 @@ class WAS_Image_Make_Seamless:
     RETURN_NAMES = ("images",)
     FUNCTION = "make_seamless"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def make_seamless(self, images, blending, tiled, tiles):
 
@@ -4664,7 +4664,7 @@ class WAS_Image_Displacement_Warp:
     RETURN_NAMES = ("images",)
     FUNCTION = "displace_image"
 
-    CATEGORY = "WAS Suite/Image/Transform"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Transform"
 
     def displace_image(self, images, displacement_maps, amplitude):
 
@@ -4732,7 +4732,7 @@ class WAS_Image_Batch:
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("image",)
     FUNCTION = "image_batch"
-    CATEGORY = "WAS Suite/Image"
+    CATEGORY = "Updated Pack/WAS Suite/Image"
 
     def _check_image_dimensions(self, tensors, names):
         reference_dimensions = tensors[0].shape[1:]  # Ignore batch dimension
@@ -4775,7 +4775,7 @@ class WAS_Latent_Batch:
     RETURN_TYPES = ("LATENT",)
     RETURN_NAMES = ("latent",)
     FUNCTION = "latent_batch"
-    CATEGORY = "WAS Suite/Latent"
+    CATEGORY = "Updated Pack/WAS Suite/Latent"
 
     def _check_latent_dimensions(self, tensors, names):
         dimensions = [(tensor["samples"].shape) for tensor in tensors]
@@ -4825,7 +4825,7 @@ class WAS_Mask_Batch:
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("masks",)
     FUNCTION = "mask_batch"
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     def _check_mask_dimensions(self, tensors, names):
         dimensions = [tensor.shape[1:] for tensor in tensors]  # Exclude the batch dimension (if present)
@@ -4866,7 +4866,7 @@ class WAS_Image_Color_Palette:
     RETURN_NAMES = ("image","color_palettes")
     FUNCTION = "image_generate_palette"
 
-    CATEGORY = "WAS Suite/Image/Analyze"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Analyze"
 
     def image_generate_palette(self, image, colors=16, mode="chart"):
 
@@ -4916,7 +4916,7 @@ class WAS_Hex_to_HSL:
     RETURN_NAMES = ("hue", "saturation", "lightness", "alpha", "hsl")
 
     FUNCTION = "hex_to_hsl"
-    CATEGORY = "WAS Suite/Utilities"
+    CATEGORY = "Updated Pack/WAS Suite/Utilities"
 
     @staticmethod
     def hex_to_hsl(hex_color, include_alpha=False):
@@ -4972,7 +4972,7 @@ class WAS_HSL_to_Hex:
     RETURN_NAMES = ("hex_color",)
 
     FUNCTION = "hsl_to_hex"
-    CATEGORY = "WAS Suite/Utilities"
+    CATEGORY = "Updated Pack/WAS Suite/Utilities"
 
     @staticmethod
     def hsl_to_hex(hsl_color):
@@ -5040,7 +5040,7 @@ class WAS_Image_Analyze:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_analyze"
 
-    CATEGORY = "WAS Suite/Image/Analyze"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Analyze"
 
     def image_analyze(self, image, mode='Black White Levels'):
 
@@ -5087,7 +5087,7 @@ class WAS_Image_Generate_Gradient:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_gradient"
 
-    CATEGORY = "WAS Suite/Image/Generate"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Generate"
 
     def image_gradient(self, gradient_stops, width=512, height=512, direction='horizontal', tolerance=0):
 
@@ -5126,7 +5126,7 @@ class WAS_Image_Gradient_Map:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_gradient_map"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def image_gradient_map(self, image, gradient_image, flip_left_right='false'):
 
@@ -5166,7 +5166,7 @@ class WAS_Image_Transpose:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_transpose"
 
-    CATEGORY = "WAS Suite/Image/Transform"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Transform"
 
     def image_transpose(self, image: torch.Tensor, image_overlay: torch.Tensor, width: int, height: int, X: int, Y: int, rotation: int, feathering: int = 0):
         return (pil2tensor(self.apply_transpose_image(tensor2pil(image), tensor2pil(image_overlay), (width, height), (X, Y), rotation, feathering)), )
@@ -5222,7 +5222,7 @@ class WAS_Image_Rescale:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_rescale"
 
-    CATEGORY = "WAS Suite/Image/Transform"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Transform"
 
     def image_rescale(self, image, mode="rescale", supersample='true', resampling="lanczos", rescale_factor=2, resize_width=1024, resize_height=1024):
         scaled_images = []
@@ -5291,7 +5291,7 @@ class WAS_Load_Image_Batch:
     RETURN_NAMES = ("image","filename_text")
     FUNCTION = "load_batch_images"
 
-    CATEGORY = "WAS Suite/IO"
+    CATEGORY = "Updated Pack/WAS Suite/IO"
 
     def load_batch_images(self, path, pattern='*', index=0, mode="single_image", seed=0, label='Batch 001', allow_RGBA_output='false', filename_text_extension='true'):
 
@@ -5423,7 +5423,7 @@ class WAS_Image_History:
     RETURN_NAMES = ("image","filename_text")
     FUNCTION = "image_history"
 
-    CATEGORY = "WAS Suite/History"
+    CATEGORY = "Updated Pack/WAS Suite/History"
 
     def image_history(self, image):
         self.HDB = WASDatabase(WAS_HISTORY_DATABASE)
@@ -5462,7 +5462,7 @@ class WAS_Image_Stitch:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_stitching"
 
-    CATEGORY = "WAS Suite/Image/Transform"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Transform"
 
     def image_stitching(self, image_a, image_b, stitch="right", feathering=50):
 
@@ -5504,7 +5504,7 @@ class WAS_Image_Padding:
     RETURN_NAMES = ("IMAGE", "MASK")
     FUNCTION = "image_padding"
 
-    CATEGORY = "WAS Suite/Image/Transform"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Transform"
 
     def image_padding(self, image, feathering, left_padding, right_padding, top_padding, bottom_padding, feather_second_pass=True):
         padding = self.apply_image_padding(tensor2pil(
@@ -5601,7 +5601,7 @@ class WAS_Image_Threshold:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_threshold"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def image_threshold(self, image, threshold=0.5):
         images = []
@@ -5644,7 +5644,7 @@ class WAS_Image_Chromatic_Aberration:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_chromatic_aberration"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def image_chromatic_aberration(self, image, red_offset=4, green_offset=2, blue_offset=0, intensity=1, fade_radius=12):
         return (pil2tensor(self.apply_chromatic_aberration(tensor2pil(image), red_offset, green_offset, blue_offset, intensity, fade_radius)), )
@@ -5739,7 +5739,7 @@ class WAS_Image_Bloom_Filter:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_bloom"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def image_bloom(self, image, radius=0.5, intensity=1.0):
         return (pil2tensor(self.apply_bloom_filter(tensor2pil(image), radius, intensity)), )
@@ -5787,7 +5787,7 @@ class WAS_Image_Rotate_Hue:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "rotate_hue"
 
-    CATEGORY = "WAS Suite/Image/Adjustment"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Adjustment"
 
     def rotate_hue(self, image, hue_shift=0.0):
         if hue_shift > 1.0 or hue_shift < 0.0:
@@ -5842,7 +5842,7 @@ class WAS_Image_Remove_Color:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_remove_color"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def image_remove_color(self, image, clip_threshold=10, target_red=255, target_green=255, target_blue=255, replace_red=255, replace_green=255, replace_blue=255):
         return (pil2tensor(self.apply_remove_color(tensor2pil(image), clip_threshold, (target_red, target_green, target_blue), (replace_red, replace_green, replace_blue))), )
@@ -5891,7 +5891,7 @@ class WAS_Remove_Background:
     RETURN_NAMES = ("images",)
     FUNCTION = "image_remove_background"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def image_remove_background(self, images, mode='background', threshold=127, threshold_tolerance=2):
         return (self.remove_background(images, mode, threshold, threshold_tolerance), )
@@ -5949,7 +5949,7 @@ class WAS_Remove_Rembg:
     RETURN_NAMES = ("images",)
     FUNCTION = "image_rembg"
 
-    CATEGORY = "WAS Suite/Image/AI"
+    CATEGORY = "Updated Pack/WAS Suite/Image/AI"
 
      # A helper function to convert from strings to logical boolean
      # Conforms to https://docs.python.org/3/library/stdtypes.html#truth-value-testing
@@ -6070,7 +6070,7 @@ class WAS_Image_Blend_Mask:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_blend_mask"
 
-    CATEGORY = "WAS Suite/Image"
+    CATEGORY = "Updated Pack/WAS Suite/Image"
 
     def image_blend_mask(self, image_a, image_b, mask, blend_percentage):
 
@@ -6114,7 +6114,7 @@ class WAS_Image_Blank:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "blank_image"
 
-    CATEGORY = "WAS Suite/Image"
+    CATEGORY = "Updated Pack/WAS Suite/Image"
 
     def blank_image(self, width, height, red, green, blue):
 
@@ -6150,7 +6150,7 @@ class WAS_Image_High_Pass_Filter:
     RETURN_NAMES = ("images",)
     FUNCTION = "high_pass"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def high_pass(self, images, radius=10, strength=1.5, color_output="true", neutral_background="true"):
         batch_tensor = []
@@ -6199,7 +6199,7 @@ class WAS_Image_Levels:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "apply_image_levels"
 
-    CATEGORY = "WAS Suite/Image/Adjustment"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Adjustment"
 
     def apply_image_levels(self, image, black_level, mid_level, white_level):
 
@@ -6263,7 +6263,7 @@ class WAS_Film_Grain:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "film_grain"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def film_grain(self, image, density, intensity, highlights, supersample_factor):
         return (pil2tensor(self.apply_film_grain(tensor2pil(image), density, intensity, highlights, supersample_factor)), )
@@ -6319,7 +6319,7 @@ class WAS_Image_Flip:
     RETURN_NAMES = ("images",)
     FUNCTION = "image_flip"
 
-    CATEGORY = "WAS Suite/Image/Transform"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Transform"
 
     def image_flip(self, images, mode):
 
@@ -6355,7 +6355,7 @@ class WAS_Image_Rotate:
     RETURN_NAMES = ("images",)
     FUNCTION = "image_rotate"
 
-    CATEGORY = "WAS Suite/Image/Transform"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Transform"
 
     def image_rotate(self, images, mode, rotation, sampler):
 
@@ -6415,7 +6415,7 @@ class WAS_Image_Nova_Filter:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "nova_sine"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def nova_sine(self, image, amplitude, frequency):
 
@@ -6477,7 +6477,7 @@ class WAS_Canny_Filter:
     RETURN_NAMES = ("images",)
     FUNCTION = "canny_filter"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def canny_filter(self, images, threshold_low, threshold_high, enable_threshold):
 
@@ -6587,7 +6587,7 @@ class WAS_Image_Edge:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_edges"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def image_edges(self, image, mode):
 
@@ -6628,7 +6628,7 @@ class WAS_Image_fDOF:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "fdof_composite"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def fdof_composite(self, image, depth, radius, samples, mode):
 
@@ -6700,7 +6700,7 @@ class WAS_Dragon_Filter:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "apply_dragan_filter"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def apply_dragan_filter(self, image, saturation, contrast, sharpness, brightness, highpass_radius, highpass_samples, highpass_strength, colorize):
 
@@ -6735,7 +6735,7 @@ class WAS_Image_Median_Filter:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "apply_median_filter"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def apply_median_filter(self, image, diameter, sigma_color, sigma_space):
 
@@ -6770,7 +6770,7 @@ class WAS_Image_Select_Color:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "select_color"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def select_color(self, image, red=255, green=255, blue=255, variance=10):
 
@@ -6824,7 +6824,7 @@ class WAS_Image_Select_Channel:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "select_channel"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def select_channel(self, image, channel='red'):
 
@@ -6871,7 +6871,7 @@ class WAS_Images_To_RGB:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_to_rgb"
 
-    CATEGORY = "WAS Suite/Image"
+    CATEGORY = "Updated Pack/WAS Suite/Image"
 
     def image_to_rgb(self, images):
 
@@ -6901,7 +6901,7 @@ class WAS_Images_To_Linear:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_to_linear"
 
-    CATEGORY = "WAS Suite/Image"
+    CATEGORY = "Updated Pack/WAS Suite/Image"
 
     def image_to_linear(self, images):
 
@@ -6934,7 +6934,7 @@ class WAS_Image_RGB_Merge:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "merge_channels"
 
-    CATEGORY = "WAS Suite/Image/Process"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Process"
 
     def merge_channels(self, red_channel, green_channel, blue_channel):
 
@@ -6979,7 +6979,7 @@ class WAS_Image_Ambient_Occlusion:
     RETURN_NAMES = ("composited_images", "ssao_images", "specular_mask_images")
     FUNCTION = "ambient_occlusion"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def ambient_occlusion(self, images, depth_images, strength, radius, ao_blur, specular_threshold, enable_specular_masking, tile_size):
 
@@ -7104,7 +7104,7 @@ class WAS_Image_Direct_Occlusion:
     RETURN_NAMES = ("composited_images", "ssdo_images", "ssdo_image_masks", "light_source_image_masks")
     FUNCTION = "direct_occlusion"
 
-    CATEGORY = "WAS Suite/Image/Filter"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Filter"
 
     def direct_occlusion(self, images, depth_images, strength, radius, specular_threshold, colored_occlusion):
 
@@ -7224,7 +7224,7 @@ class WAS_Export_API:
     RETURN_TYPES = ()
     FUNCTION = "export_api"
 
-    CATEGORY = "WAS Suite/Debug"
+    CATEGORY = "Updated Pack/WAS Suite/Debug"
 
     def export_api(self, output_path=None, filename_prefix="ComfyUI", filename_number_padding=4,
                     filename_delimiter='_', prompt=None, save_prompt_api="true", parse_text_tokens=False):
@@ -7327,7 +7327,7 @@ class WAS_Image_Save:
 
     OUTPUT_NODE = True
 
-    CATEGORY = "WAS Suite/IO"
+    CATEGORY = "Updated Pack/WAS Suite/IO"
 
     def was_save_images(self, images, output_path='', filename_prefix="ComfyUI", filename_delimiter='_',
                         extension='png', dpi=96, quality=100, optimize_image="true", lossless_webp="false", prompt=None, extra_pnginfo=None,
@@ -7556,7 +7556,7 @@ class WAS_Image_Send_HTTP:
     FUNCTION = "was_send_images_http"
     OUTPUT_NODE = True
 
-    CATEGORY = "WAS Suite/IO"
+    CATEGORY = "Updated Pack/WAS Suite/IO"
 
     def was_send_images_http(self, images, url="example.com",
                              method_type="post",
@@ -7607,7 +7607,7 @@ class WAS_Load_Image:
     RETURN_NAMES = ("image", "mask", "filename_text")
     FUNCTION = "load_image"
 
-    CATEGORY = "WAS Suite/IO"
+    CATEGORY = "Updated Pack/WAS Suite/IO"
 
     def load_image(self, image_path, RGBA='false', filename_text_extension="true"):
 
@@ -7691,7 +7691,7 @@ class WAS_Mask_Batch_to_Single_Mask:
     RETURN_TYPES = ("MASK",)
     FUNCTION = "mask_batch_to_mask"
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     def mask_batch_to_mask(self, masks=[], batch_number=0):
         count = 0
@@ -7723,7 +7723,7 @@ class WAS_Tensor_Batch_to_Image:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "tensor_batch_to_image"
 
-    CATEGORY = "WAS Suite/Latent/Transform"
+    CATEGORY = "Updated Pack/WAS Suite/Latent/Transform"
 
     def tensor_batch_to_image(self, images_batch=[], batch_image_number=0):
 
@@ -7755,7 +7755,7 @@ class WAS_Image_To_Mask:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -7798,7 +7798,7 @@ class WAS_Mask_To_Image:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("IMAGES",)
@@ -7842,7 +7842,7 @@ class WAS_Mask_Crop_Dominant_Region:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -7882,7 +7882,7 @@ class WAS_Mask_Crop_Minority_Region:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -7926,7 +7926,7 @@ class WAS_Mask_Crop_Region:
     RETURN_NAMES = ("cropped_mask", "crop_data", "top_int", "left_int", "right_int", "bottom_int", "width_int", "height_int")
     FUNCTION = "mask_crop_region"
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     def mask_crop_region(self, mask, padding=24, region_type="dominant"):
 
@@ -7961,7 +7961,7 @@ class WAS_Mask_Paste_Region:
     RETURN_NAMES = ("RESULT_MASK", "CROP_MASK")
     FUNCTION = "mask_paste_region"
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     def mask_paste_region(self, mask, crop_mask, crop_data=None, crop_blending=0.25, crop_sharpening=0):
 
@@ -8067,7 +8067,7 @@ class WAS_Mask_Dominant_Region:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8107,7 +8107,7 @@ class WAS_Mask_Minority_Region:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8154,7 +8154,7 @@ class WAS_Mask_Rect_Area:
             "hidden": {"extra_pnginfo": "EXTRA_PNGINFO", "unique_id": "UNIQUE_ID"}
         }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8223,7 +8223,7 @@ class WAS_Mask_Rect_Area_Advanced:
             "hidden": {"extra_pnginfo": "EXTRA_PNGINFO", "unique_id": "UNIQUE_ID"}
         }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8285,7 +8285,7 @@ class WAS_Mask_Arbitrary_Region:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8326,7 +8326,7 @@ class WAS_Mask_Smooth_Region:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8368,7 +8368,7 @@ class WAS_Mask_Erode_Region:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8409,7 +8409,7 @@ class WAS_Mask_Subtract:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8436,7 +8436,7 @@ class WAS_Mask_Add:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8466,7 +8466,7 @@ class WAS_Mask_Invert:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8492,7 +8492,7 @@ class WAS_Mask_Dilate_Region:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8533,7 +8533,7 @@ class WAS_Mask_Fill_Region:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8576,7 +8576,7 @@ class WAS_Mask_Threshold_Region:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8617,7 +8617,7 @@ class WAS_Mask_Floor_Region:
             }
         }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8658,7 +8658,7 @@ class WAS_Mask_Ceiling_Region:
             }
         }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8700,7 +8700,7 @@ class WAS_Mask_Gaussian_Region:
             }
         }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
     RETURN_NAMES = ("MASKS",)
@@ -8748,7 +8748,7 @@ class WAS_Mask_Combine:
                     }
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
 
@@ -8792,7 +8792,7 @@ class WAS_Mask_Combine_Batch:
                     },
                 }
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     RETURN_TYPES = ("MASK",)
 
@@ -8817,7 +8817,7 @@ class WAS_Latent_Upscale:
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "latent_upscale"
 
-    CATEGORY = "WAS Suite/Latent/Transform"
+    CATEGORY = "Updated Pack/WAS Suite/Latent/Transform"
 
     def latent_upscale(self, samples, mode, factor, align):
         valid_modes = ["area", "bicubic", "bilinear", "nearest"]
@@ -8857,7 +8857,7 @@ class WAS_Latent_Noise:
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "inject_noise"
 
-    CATEGORY = "WAS Suite/Latent/Generate"
+    CATEGORY = "Updated Pack/WAS Suite/Latent/Generate"
 
     def inject_noise(self, samples, noise_std):
         s = samples.copy()
@@ -8885,7 +8885,7 @@ class MiDaS_Model_Loader:
     RETURN_NAMES = ("midas_model",)
     FUNCTION = "load_midas_model"
 
-    CATEGORY = "WAS Suite/Loaders"
+    CATEGORY = "Updated Pack/WAS Suite/Loaders"
 
     def load_midas_model(self, midas_model):
 
@@ -8951,7 +8951,7 @@ class MiDaS_Depth_Approx:
     RETURN_NAMES = ("images",)
     FUNCTION = "midas_approx"
 
-    CATEGORY = "WAS Suite/Image/AI"
+    CATEGORY = "Updated Pack/WAS Suite/Image/AI"
 
     def midas_approx(self, image, use_cpu, midas_type, invert_depth, midas_model=None):
 
@@ -9073,7 +9073,7 @@ class MiDaS_Background_Foreground_Removal:
     RETURN_NAMES = ("RESULT", "DEPTH")
     FUNCTION = "midas_remove"
 
-    CATEGORY = "WAS Suite/Image/AI"
+    CATEGORY = "Updated Pack/WAS Suite/Image/AI"
 
     def midas_remove(self,
                      image,
@@ -9234,7 +9234,7 @@ class WAS_NSP_CLIPTextEncoder:
     RETURN_NAMES = ("conditioning", "parsed_text", "raw_text")
     FUNCTION = "nsp_encode"
 
-    CATEGORY = "WAS Suite/Conditioning"
+    CATEGORY = "Updated Pack/WAS Suite/Conditioning"
 
     def nsp_encode(self, clip, text, mode="Noodle Soup Prompts", noodle_key='__', seed=0):
 
@@ -9276,7 +9276,7 @@ class WAS_KSampler:
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "sample"
 
-    CATEGORY = "WAS Suite/Sampling"
+    CATEGORY = "Updated Pack/WAS Suite/Sampling"
 
     def sample(self, model, seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, denoise=1.0):
         return nodes.common_ksampler(model, seed['seed'], steps, cfg, sampler_name, scheduler, positive, negative, latent_image, denoise=denoise)
@@ -9336,7 +9336,7 @@ class WAS_KSampler_Cycle:
     RETURN_NAMES =  ("latent(s)",)
     FUNCTION = "sample"
 
-    CATEGORY = "WAS Suite/Sampling"
+    CATEGORY = "Updated Pack/WAS Suite/Sampling"
 
     def sample(self, model, seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, tiled_vae, latent_upscale, upscale_factor,
                 upscale_cycles, starting_denoise, cycle_denoise, scale_denoise, scale_sampling, vae, secondary_model=None, secondary_start_cycle=None,
@@ -9611,7 +9611,7 @@ class WAS_Blend_Latents:
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "latent_blend"
 
-    CATEGORY = "WAS Suite/Latent"
+    CATEGORY = "Updated Pack/WAS Suite/Latent"
 
     def latent_blend(self, latent_a, latent_b, operation, blend):
         return ( {"samples": self.blend_latents(latent_a['samples'], latent_b['samples'], operation, blend)}, )
@@ -9713,7 +9713,7 @@ class WAS_Seed:
     RETURN_NAMES = ("seed", "number", "float", "int")
     FUNCTION = "seed"
 
-    CATEGORY = "WAS Suite/Number"
+    CATEGORY = "Updated Pack/WAS Suite/Number"
 
     def seed(self, seed):
         return ({"seed": seed, }, seed, float(seed), int(seed) )
@@ -9733,7 +9733,7 @@ class WAS_Image_To_Seed:
     OUTPUT_IS_LIST = (True,)
 
     FUNCTION = "image_to_seed"
-    CATEGORY = "WAS Suite/Image/Analyze"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Analyze"
 
     def image_to_seed(self, images):
 
@@ -9774,7 +9774,7 @@ class WAS_Prompt_Styles_Selector:
     RETURN_NAMES = ("positive_string", "negative_string")
     FUNCTION = "load_style"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def load_style(self, style):
 
@@ -9824,7 +9824,7 @@ class WAS_Prompt_Multiple_Styles_Selector:
     RETURN_NAMES = ("positive_string", "negative_string")
     FUNCTION = "load_style"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def load_style(self, style1, style2, style3, style4):
         styles = {}
@@ -9868,7 +9868,7 @@ class WAS_Text_Multiline:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "text_multiline"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def text_multiline(self, text):
         import io
@@ -9898,7 +9898,7 @@ class WAS_Text_Multiline_Raw:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "text_multiline"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def text_multiline(self, text):
         tokens = TextTokens()
@@ -9929,7 +9929,7 @@ class WAS_Text_List_Concatenate:
     RETURN_TYPES = ("LIST",)
     FUNCTION = "text_concatenate_list"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def text_concatenate_list(self, **kwargs):
         merged_list: list[str] = []
@@ -9969,7 +9969,7 @@ class WAS_Text_List:
     RETURN_TYPES = ("LIST",)
     FUNCTION = "text_as_list"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def text_as_list(self, **kwargs):
         text_list: list[str] = []
@@ -10003,7 +10003,7 @@ class WAS_Text_List_to_Text:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "text_list_to_text"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def text_list_to_text(self, delimiter, text_list):
         # Handle special case where delimiter is "\n" (literal newline).
@@ -10031,7 +10031,7 @@ class WAS_Text_Parse_Embeddings_By_Name:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "text_parse_embeddings"
 
-    CATEGORY = "WAS Suite/Text/Parse"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Parse"
 
     def text_parse_embeddings(self, text):
         return (self.convert_a1111_embeddings(text), )
@@ -10068,7 +10068,7 @@ class WAS_Dictionary_Update:
     RETURN_TYPES = ("DICT",)
     FUNCTION = "dictionary_update"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def dictionary_update(self, dictionary_a, dictionary_b, dictionary_c=None, dictionary_d=None):
         return_dictionary = {**dictionary_a, **dictionary_b}
@@ -10093,7 +10093,7 @@ class WAS_Dictionary_Convert:
     RETURN_TYPES = ("DICT",)
     FUNCTION = "dictionary_convert"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def dictionary_convert(self, dictionary_text):
         # using ast.literal_eval here because the string is not guaranteed to be json (using double quotes)
@@ -10121,7 +10121,7 @@ class WAS_Dictionary_Get:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "dictionary_get"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def dictionary_get(self, dictionary, key, default_value=""):
         return (str(dictionary.get(key, default_value)), )
@@ -10154,7 +10154,7 @@ class WAS_Dictionary_New:
     RETURN_TYPES = ("DICT",)
     FUNCTION = "dictionary_new"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def append_to_dictionary(self, dictionary, key, value):
         if key is not None and key != "":
@@ -10188,7 +10188,7 @@ class WAS_Dictionary_Keys:
     RETURN_TYPES = ("LIST",)
     FUNCTION = "dictionary_keys"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def dictionary_keys(self, dictionary):
         return (dictionary.keys(), )
@@ -10209,7 +10209,7 @@ class WAS_Dictionary_to_Text:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "dictionary_to_text"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def dictionary_to_text(self, dictionary):
         return (str(dictionary), )
@@ -10237,7 +10237,7 @@ class WAS_Text_String:
     RETURN_NAMES = ("TEXT", "TEXT_B", "TEXT_C", "TEXT_D")
     FUNCTION = "text_string"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def text_string(self, text='', text_b='', text_c='', text_d=''):
 
@@ -10276,7 +10276,7 @@ class WAS_Text_String_Truncate:
     RETURN_NAMES = ("TEXT", "TEXT_B", "TEXT_C", "TEXT_D")
     FUNCTION = "truncate_string"
 
-    CATEGORY = "WAS Suite/Text/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Operations"
 
     def truncate_string(self, text, truncate_by, truncate_from, truncate_to, text_b='', text_c='', text_d=''):
         return (
@@ -10326,7 +10326,7 @@ class WAS_Text_Compare:
     RETURN_NAMES = ("TEXT_A_PASS","TEXT_B_PASS","BOOLEAN","SCORE_NUMBER","COMPARISON_TEXT")
     FUNCTION = "text_compare"
 
-    CATEGORY = "WAS Suite/Text/Search"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Search"
 
     def text_compare(self, text_a='', text_b='', mode='similarity', tolerance=0.0):
 
@@ -10448,7 +10448,7 @@ class WAS_Text_Random_Line:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "text_random_line"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def text_random_line(self, text, seed):
         lines = text.split("\n")
@@ -10481,7 +10481,7 @@ class WAS_Text_Concatenate:
     RETURN_TYPES = ("STRING",)
     FUNCTION = "text_concatenate"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def text_concatenate(self, delimiter, clean_whitespace, **kwargs):
         text_inputs = []
@@ -10536,7 +10536,7 @@ class WAS_Find:
     RETURN_NAMES = ("found",)
     FUNCTION = "execute"
 
-    CATEGORY = "WAS Suite/Text/Search"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Search"
 
     def execute(self, text, substring, pattern):
         if substring:
@@ -10566,7 +10566,7 @@ class WAS_Search_and_Replace:
     RETURN_NAMES = ("result_text", "replacement_count_number", "replacement_count_float", "replacement_count_int")
     FUNCTION = "text_search_and_replace"
 
-    CATEGORY = "WAS Suite/Text/Search"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Search"
 
     def text_search_and_replace(self, text, find, replace):
         modified_text, count = self.replace_substring(text, find, replace)
@@ -10596,7 +10596,7 @@ class WAS_Text_Shuffle:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "shuffle"
 
-    CATEGORY = "WAS Suite/Text/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Operations"
 
     def shuffle(self, text, separator, seed):
 
@@ -10628,7 +10628,7 @@ class WAS_Text_Sort:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "sort"
 
-    CATEGORY = "WAS Suite/Text/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Operations"
 
     def sort(self, text, separator):
         tokens = WAS_Text_Sort.split_using_protected_groups(text.strip(separator + " \t\n\r"), separator.strip())
@@ -10676,7 +10676,7 @@ class WAS_Search_and_Replace_Input:
     RETURN_NAMES = ("result_text", "replacement_count_number", "replacement_count_float", "replacement_count_int")
     FUNCTION = "text_search_and_replace"
 
-    CATEGORY = "WAS Suite/Text/Search"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Search"
 
     def text_search_and_replace(self, text, find, replace):
         count = 0
@@ -10711,7 +10711,7 @@ class WAS_Search_and_Replace_Dictionary:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "text_search_and_replace_dict"
 
-    CATEGORY = "WAS Suite/Text/Search"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Search"
 
     def text_search_and_replace_dict(self, text, dictionary, replacement_key, seed):
         random.seed(seed)
@@ -10754,7 +10754,7 @@ class WAS_Text_Parse_NSP:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "text_parse_nsp"
 
-    CATEGORY = "WAS Suite/Text/Parse"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Parse"
 
     def text_parse_nsp(self, text, mode="Noodle Soup Prompts", noodle_key='__', seed=0):
 
@@ -10797,7 +10797,7 @@ class WAS_Text_Save:
     OUTPUT_NODE = True
     RETURN_TYPES = ()
     FUNCTION = "save_text_file"
-    CATEGORY = "WAS Suite/IO"
+    CATEGORY = "Updated Pack/WAS Suite/IO"
 
     def save_text_file(self, text, path, filename_prefix='ComfyUI', filename_delimiter='_', 
                        filename_number_padding=4, file_extension='.txt', encoding='utf-8', filename_suffix=''):
@@ -10895,7 +10895,7 @@ class WAS_Text_File_History:
     RETURN_TYPES = (TEXT_TYPE,"DICT")
     FUNCTION = "text_file_history"
 
-    CATEGORY = "WAS Suite/History"
+    CATEGORY = "Updated Pack/WAS Suite/History"
 
     def text_file_history(self, file=None, dictionary_name='[filename]]'):
         file_path = file.strip()
@@ -10943,7 +10943,7 @@ class WAS_Text_to_Conditioning:
     RETURN_TYPES = ("CONDITIONING",)
     FUNCTION = "text_to_conditioning"
 
-    CATEGORY = "WAS Suite/Text/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Operations"
 
     def text_to_conditioning(self, clip, text):
         encoder = nodes.CLIPTextEncode()
@@ -10969,7 +10969,7 @@ class WAS_Text_Parse_Tokens:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "text_parse_tokens"
 
-    CATEGORY = "WAS Suite/Text/Tokens"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Tokens"
 
     def text_parse_tokens(self, text):
         # Token Parser
@@ -10999,7 +10999,7 @@ class WAS_Text_Add_Tokens:
     RETURN_TYPES = ()
     FUNCTION = "text_add_tokens"
     OUTPUT_NODE = True
-    CATEGORY = "WAS Suite/Text/Tokens"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Tokens"
 
     def text_add_tokens(self, tokens, print_current_tokens="false"):
 
@@ -11047,7 +11047,7 @@ class WAS_Text_Add_Token_Input:
     RETURN_TYPES = ()
     FUNCTION = "text_add_token"
     OUTPUT_NODE = True
-    CATEGORY = "WAS Suite/Text/Tokens"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Tokens"
 
     def text_add_token(self, token_name, token_value, print_current_tokens="false"):
 
@@ -11093,7 +11093,7 @@ class WAS_Text_to_Console:
     OUTPUT_NODE = True
     FUNCTION = "text_to_console"
 
-    CATEGORY = "WAS Suite/Debug"
+    CATEGORY = "Updated Pack/WAS Suite/Debug"
 
     def text_to_console(self, text, label):
         if label.strip() != '':
@@ -11121,7 +11121,7 @@ class WAS_Dictionary_To_Console:
     OUTPUT_NODE = True
     FUNCTION = "text_to_console"
 
-    CATEGORY = "WAS Suite/Debug"
+    CATEGORY = "Updated Pack/WAS Suite/Debug"
 
     def text_to_console(self, dictionary, label):
         if label.strip() != '':
@@ -11154,7 +11154,7 @@ class WAS_Text_Load_From_File:
     RETURN_TYPES = (TEXT_TYPE,"DICT")
     FUNCTION = "load_file"
 
-    CATEGORY = "WAS Suite/IO"
+    CATEGORY = "Updated Pack/WAS Suite/IO"
 
     def load_file(self, file_path='', dictionary_name='[filename]]'):
 
@@ -11218,7 +11218,7 @@ class WAS_Text_Load_Line_From_File:
     RETURN_NAMES = ("line_text", "dictionary")
     FUNCTION = "load_file"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def load_file(self, file_path='', dictionary_name='[filename]', label='TextBatch',
                   mode='automatic', index=0, multiline_text=None):
@@ -11327,7 +11327,7 @@ class WAS_Text_To_String:
     RETURN_TYPES = ("STRING",)
     FUNCTION = "text_to_string"
 
-    CATEGORY = "WAS Suite/Text/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Operations"
 
     def text_to_string(self, text):
         return (text, )
@@ -11347,7 +11347,7 @@ class WAS_Text_To_Number:
     RETURN_TYPES = ("NUMBER",)
     FUNCTION = "text_to_number"
 
-    CATEGORY = "WAS Suite/Text/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Operations"
 
     def text_to_number(self, text):
         if "." in text:
@@ -11372,7 +11372,7 @@ class WAS_String_To_Text:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "string_to_text"
 
-    CATEGORY = "WAS Suite/Text/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Text/Operations"
 
     def string_to_text(self, string):
         return (string, )
@@ -11398,7 +11398,7 @@ class WAS_Text_Random_Prompt:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "random_prompt"
 
-    CATEGORY = "WAS Suite/Text"
+    CATEGORY = "Updated Pack/WAS Suite/Text"
 
     def random_prompt(self, search_seed=None):
         if search_seed in ['', ' ']:
@@ -11442,7 +11442,7 @@ class WAS_BLIP_Model_Loader:
     RETURN_TYPES = ("BLIP_MODEL",)
     FUNCTION = "blip_model"
 
-    CATEGORY = "WAS Suite/Loaders"
+    CATEGORY = "Updated Pack/WAS Suite/Loaders"
 
     def blip_model(self, blip_model, vqa_model_id, device):
 
@@ -11486,7 +11486,7 @@ class WAS_BLIP_Analyze_Image:
     OUTPUT_IS_LIST = (False, True)
 
     FUNCTION = "blip_caption_image"
-    CATEGORY = "WAS Suite/Text/AI"
+    CATEGORY = "Updated Pack/WAS Suite/Text/AI"
 
     def blip_caption_image(self, images, mode, question, blip_model, min_length=24, max_length=64, num_beams=5, no_repeat_ngram_size=3, early_stopping=False):
 
@@ -11527,7 +11527,7 @@ class WAS_CLIPSeg_Model_Loader:
     RETURN_NAMES = ("clipseg_model",)
     FUNCTION = "clipseg_model"
 
-    CATEGORY = "WAS Suite/Loaders"
+    CATEGORY = "Updated Pack/WAS Suite/Loaders"
 
     def clipseg_model(self, model):
         from transformers import CLIPSegProcessor, CLIPSegForImageSegmentation
@@ -11561,7 +11561,7 @@ class WAS_CLIPSeg:
     RETURN_NAMES = ("MASK", "MASK_IMAGE")
     FUNCTION = "CLIPSeg_image"
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     def CLIPSeg_image(self, image, text=None, clipseg_model=None):
         from transformers import CLIPSegProcessor, CLIPSegForImageSegmentation
@@ -11795,7 +11795,7 @@ class WAS_CLIPSeg_Batch:
     RETURN_NAMES = ("IMAGES_BATCH", "MASKS_BATCH", "MASK_IMAGES_BATCH")
     FUNCTION = "CLIPSeg_images"
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     def CLIPSeg_images(self, image_a, image_b, text_a, text_b, image_c=None, image_d=None,
                        image_e=None, image_f=None, text_c=None, text_d=None, text_e=None, text_f=None):
@@ -11884,7 +11884,7 @@ class WAS_SAM_Model_Loader:
     RETURN_TYPES = ("SAM_MODEL",)
     FUNCTION = "sam_load_model"
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     def sam_load_model(self, model_size):
         conf = getSuiteConfig()
@@ -11955,7 +11955,7 @@ class WAS_SAM_Parameters:
     RETURN_TYPES = ("SAM_PARAMETERS",)
     FUNCTION = "sam_parameters"
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     def sam_parameters(self, points, labels):
         parameters = {
@@ -11983,7 +11983,7 @@ class WAS_SAM_Combine_Parameters:
     RETURN_TYPES = ("SAM_PARAMETERS",)
     FUNCTION = "sam_combine_parameters"
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     def sam_combine_parameters(self, sam_parameters_a, sam_parameters_b):
         parameters = {
@@ -12019,7 +12019,7 @@ class WAS_SAM_Image_Mask:
     RETURN_TYPES = ("IMAGE", "MASK",)
     FUNCTION = "sam_image_mask"
 
-    CATEGORY = "WAS Suite/Image/Masking"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Masking"
 
     def sam_image_mask(self, sam_model, sam_parameters, image):
         image = tensor2sam(image)
@@ -12072,7 +12072,7 @@ class WAS_Image_Bounds:
     RETURN_TYPES = ("IMAGE_BOUNDS",)
     FUNCTION = "image_bounds"
 
-    CATEGORY = "WAS Suite/Image/Bound"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Bound"
 
     def image_bounds(self, image):
         # Ensure we are working with batches
@@ -12101,7 +12101,7 @@ class WAS_Inset_Image_Bounds:
     RETURN_TYPES = ("IMAGE_BOUNDS",)
     FUNCTION = "inset_image_bounds"
 
-    CATEGORY = "WAS Suite/Image/Bound"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Bound"
 
     def inset_image_bounds(self, image_bounds, inset_left, inset_right, inset_top, inset_bottom):
         inset_bounds = []
@@ -12138,7 +12138,7 @@ class WAS_Bounded_Image_Blend:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "bounded_image_blend"
 
-    CATEGORY = "WAS Suite/Image/Bound"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Bound"
 
     def bounded_image_blend(self, target, target_bounds, source, blend_factor, feathering):
         # Ensure we are working with batches
@@ -12225,7 +12225,7 @@ class WAS_Bounded_Image_Crop:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "bounded_image_crop"
 
-    CATEGORY = "WAS Suite/Image/Bound"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Bound"
 
     def bounded_image_crop(self, image, image_bounds):
         # Ensure we are working with batches
@@ -12272,7 +12272,7 @@ class WAS_Bounded_Image_Blend_With_Mask:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "bounded_image_blend_with_mask"
 
-    CATEGORY = "WAS Suite/Image/Bound"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Bound"
 
     def bounded_image_blend_with_mask(self, target, target_mask, target_bounds, source, blend_factor, feathering):
         # Ensure we are working with batches
@@ -12384,7 +12384,7 @@ class WAS_Bounded_Image_Crop_With_Mask:
     RETURN_TYPES = ("IMAGE", "IMAGE_BOUNDS",)
     FUNCTION = "bounded_image_crop_with_mask"
 
-    CATEGORY = "WAS Suite/Image/Bound"
+    CATEGORY = "Updated Pack/WAS Suite/Image/Bound"
 
     def bounded_image_crop_with_mask(self, image, mask, padding_left, padding_right, padding_top, padding_bottom,return_list=False):
         # Ensure we are working with batches
@@ -12436,7 +12436,7 @@ class WAS_Image_Bounds_to_Console:
     OUTPUT_NODE = True
     FUNCTION = "debug_to_console"
 
-    CATEGORY = "WAS Suite/Debug"
+    CATEGORY = "Updated Pack/WAS Suite/Debug"
 
     def debug_to_console(self, image_bounds, label):
         label_out = 'Debug to Console'
@@ -12477,7 +12477,7 @@ class WAS_Random_Number:
     RETURN_TYPES = ("NUMBER", "FLOAT", "INT")
     FUNCTION = "return_randm_number"
 
-    CATEGORY = "WAS Suite/Number"
+    CATEGORY = "Updated Pack/WAS Suite/Number"
 
     def return_randm_number(self, minimum, maximum, seed, number_type='integer'):
 
@@ -12524,7 +12524,7 @@ class WAS_True_Random_Number:
     RETURN_TYPES = ("NUMBER", "FLOAT", "INT")
     FUNCTION = "return_true_randm_number"
 
-    CATEGORY = "WAS Suite/Number"
+    CATEGORY = "Updated Pack/WAS Suite/Number"
 
     def return_true_randm_number(self, api_key=None, minimum=0, maximum=10, mode="random"):
 
@@ -12594,7 +12594,7 @@ class WAS_Constant_Number:
     RETURN_TYPES = ("NUMBER", "FLOAT", "INT")
     FUNCTION = "return_constant_number"
 
-    CATEGORY = "WAS Suite/Number"
+    CATEGORY = "Updated Pack/WAS Suite/Number"
 
     def return_constant_number(self, number_type, number, number_as_text=None):
 
@@ -12650,7 +12650,7 @@ class WAS_Number_Counter:
     RETURN_NAMES = ("number", "float", "int")
     FUNCTION = "increment_number"
 
-    CATEGORY = "WAS Suite/Number"
+    CATEGORY = "Updated Pack/WAS Suite/Number"
 
     def increment_number(self, number_type, mode, start, stop, step, unique_id, reset_bool=0):
 
@@ -12696,7 +12696,7 @@ class WAS_Number_To_Seed:
     RETURN_TYPES = ("SEED",)
     FUNCTION = "number_to_seed"
 
-    CATEGORY = "WAS Suite/Number/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Number/Operations"
 
     def number_to_seed(self, number):
         return ({"seed": number, }, )
@@ -12719,7 +12719,7 @@ class WAS_Number_To_Int:
     RETURN_TYPES = ("INT",)
     FUNCTION = "number_to_int"
 
-    CATEGORY = "WAS Suite/Number/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Number/Operations"
 
     def number_to_int(self, number):
         return (int(number), )
@@ -12743,7 +12743,7 @@ class WAS_Number_To_Float:
     RETURN_TYPES = ("FLOAT",)
     FUNCTION = "number_to_float"
 
-    CATEGORY = "WAS Suite/Number/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Number/Operations"
 
     def number_to_float(self, number):
         return (float(number), )
@@ -12767,7 +12767,7 @@ class WAS_Int_To_Number:
     RETURN_TYPES = ("NUMBER",)
     FUNCTION = "int_to_number"
 
-    CATEGORY = "WAS Suite/Number/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Number/Operations"
 
     def int_to_number(self, int_input):
         return (int(int_input), )
@@ -12791,7 +12791,7 @@ class WAS_Float_To_Number:
     RETURN_TYPES = ("NUMBER",)
     FUNCTION = "float_to_number"
 
-    CATEGORY = "WAS Suite/Number/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Number/Operations"
 
     def float_to_number(self, float_input):
         return ( float(float_input), )
@@ -12814,7 +12814,7 @@ class WAS_Number_To_String:
     RETURN_TYPES = ("STRING",)
     FUNCTION = "number_to_string"
 
-    CATEGORY = "WAS Suite/Number/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Number/Operations"
 
     def number_to_string(self, number):
         return ( str(number), )
@@ -12836,7 +12836,7 @@ class WAS_Number_To_Text:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "number_to_text"
 
-    CATEGORY = "WAS Suite/Number/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Number/Operations"
 
     def number_to_text(self, number):
         return ( str(number), )
@@ -12857,7 +12857,7 @@ class WAS_Number_PI:
     RETURN_TYPES = ("NUMBER", "FLOAT")
     FUNCTION = "number_pi"
 
-    CATEGORY = "WAS Suite/Number"
+    CATEGORY = "Updated Pack/WAS Suite/Number"
 
     def number_pi(self):
         return (math.pi, math.pi)
@@ -12879,7 +12879,7 @@ class WAS_Boolean:
     RETURN_TYPES = ("BOOLEAN", "NUMBER", "INT", "FLOAT")
     FUNCTION = "return_boolean"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def return_boolean(self, boolean=1.0):
         boolean_bool = bool(int(round(boolean)))
@@ -12905,7 +12905,7 @@ class WAS_Logical_Comparisons:
     RETURN_TYPES = ("BOOLEAN",)
     FUNCTION = "do"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def do(self, boolean_a, boolean_b):
         pass
@@ -12950,7 +12950,7 @@ class WAS_Boolean_Primitive:
     RETURN_TYPES = ("BOOLEAN",)
     FUNCTION = "do"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def do(self, boolean):
         return (boolean,)
@@ -12973,7 +12973,7 @@ class WAS_Boolean_To_Text:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "do"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def do(self, boolean):
         if boolean:
@@ -12998,7 +12998,7 @@ class WAS_Logical_NOT:
     RETURN_TYPES = ("BOOLEAN",)
     FUNCTION = "do"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def do(self, boolean):
         return (not boolean,)
@@ -13024,7 +13024,7 @@ class WAS_Number_Operation:
     RETURN_TYPES = ("NUMBER", "FLOAT", "INT")
     FUNCTION = "math_operations"
 
-    CATEGORY = "WAS Suite/Number/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Number/Operations"
 
     def math_operations(self, number_a, number_b, operation="addition"):
 
@@ -13091,7 +13091,7 @@ class WAS_Number_Multiple_Of:
     RETURN_TYPES =("NUMBER", "FLOAT", "INT")
     FUNCTION = "number_multiple_of"
 
-    CATEGORY = "WAS Suite/Number/Functions"
+    CATEGORY = "Updated Pack/WAS Suite/Number/Functions"
 
     def number_multiple_of(self, number, multiple=8):
         if number % multiple != 0:
@@ -13127,7 +13127,7 @@ class WAS_Bus:
     RETURN_TYPES = ("BUS", "MODEL", "CLIP", "VAE", "CONDITIONING", "CONDITIONING",)
     RETURN_NAMES = ("bus", "model", "clip", "vae", "positive",     "negative")
     FUNCTION = "bus_fn"
-    CATEGORY = "WAS Suite/Utilities"
+    CATEGORY = "Updated Pack/WAS Suite/Utilities"
 
     def bus_fn(self, bus=(None,None,None,None,None), model=None, clip=None, vae=None, positive=None, negative=None):
 
@@ -13173,7 +13173,7 @@ class WAS_Image_Size_To_Number:
     RETURN_NAMES = ("width_num", "height_num", "width_float", "height_float", "width_int", "height_int")
     FUNCTION = "image_width_height"
 
-    CATEGORY = "WAS Suite/Number/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Number/Operations"
 
     def image_width_height(self, image):
         image = tensor2pil(image)
@@ -13200,7 +13200,7 @@ class WAS_Latent_Size_To_Number:
     RETURN_NAMES = ("tensor_w_num","tensor_h_num","tensor_w_float","tensor_h_float","tensor_w_int","tensor_h_int")
     FUNCTION = "latent_width_height"
 
-    CATEGORY = "WAS Suite/Number/Operations"
+    CATEGORY = "Updated Pack/WAS Suite/Number/Operations"
 
     def latent_width_height(self, samples):
         size_dict = {}
@@ -13234,7 +13234,7 @@ class WAS_Latent_Input_Switch:
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "latent_input_switch"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def latent_input_switch(self, latent_a, latent_b, boolean=True):
 
@@ -13263,7 +13263,7 @@ class WAS_Number_Input_Condition:
     RETURN_TYPES = ("NUMBER", "FLOAT", "INT")
     FUNCTION = "number_input_condition"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def number_input_condition(self, number_a, number_b, return_boolean="false", comparison="greater-than"):
 
@@ -13364,7 +13364,7 @@ class WAS_Image_Aspect_Ratio:
     RETURN_NAMES = ("aspect_number", "aspect_float", "is_landscape_bool", "aspect_ratio_common", "aspect_type")
     FUNCTION = "aspect"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def aspect(self, boolean=True, image=None, width=None, height=None):
 
@@ -13409,7 +13409,7 @@ class WAS_Number_Input_Switch:
     RETURN_TYPES = ("NUMBER", "FLOAT", "INT")
     FUNCTION = "number_input_switch"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def number_input_switch(self, number_a, number_b, boolean=True):
 
@@ -13438,7 +13438,7 @@ class WAS_Image_Input_Switch:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "image_input_switch"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def image_input_switch(self, image_a, image_b, boolean=True):
 
@@ -13466,7 +13466,7 @@ class WAS_Conditioning_Input_Switch:
     RETURN_TYPES = ("CONDITIONING",)
     FUNCTION = "conditioning_input_switch"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def conditioning_input_switch(self, conditioning_a, conditioning_b, boolean=True):
 
@@ -13494,7 +13494,7 @@ class WAS_Model_Input_Switch:
     RETURN_TYPES = ("MODEL",)
     FUNCTION = "model_switch"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def model_switch(self, model_a, model_b, boolean=True):
 
@@ -13522,7 +13522,7 @@ class WAS_VAE_Input_Switch:
     RETURN_TYPES = ("VAE",)
     FUNCTION = "vae_switch"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def vae_switch(self, vae_a, vae_b, boolean=True):
 
@@ -13550,7 +13550,7 @@ class WAS_CLIP_Input_Switch:
     RETURN_TYPES = ("CLIP",)
     FUNCTION = "clip_switch"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def clip_switch(self, clip_a, clip_b, boolean=True):
 
@@ -13578,7 +13578,7 @@ class WAS_Upscale_Model_Input_Switch:
     RETURN_TYPES = ("UPSCALE_MODEL",)
     FUNCTION = "upscale_model_switch"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def upscale_model_switch(self, upscale_model_a, upscale_model_b, boolean=True):
 
@@ -13607,7 +13607,7 @@ class WAS_Control_Net_Input_Switch:
     RETURN_TYPES = ("CONTROL_NET",)
     FUNCTION = "control_net_switch"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def control_net_switch(self, control_net_a, control_net_b, boolean=True):
 
@@ -13635,7 +13635,7 @@ class WAS_CLIP_Vision_Input_Switch:
     RETURN_TYPES = ("CLIP_VISION",)
     FUNCTION = "clip_vision_switch"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def clip_vision_switch(self, clip_vision_a, clip_vision_b, boolean=True):
 
@@ -13663,7 +13663,7 @@ class WAS_Text_Input_Switch:
     RETURN_TYPES = (TEXT_TYPE,)
     FUNCTION = "text_input_switch"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def text_input_switch(self, text_a, text_b, boolean=True):
 
@@ -13694,7 +13694,7 @@ class WAS_Text_Contains:
     RETURN_TYPES = ("BOOLEAN",)
     FUNCTION = "text_contains"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def text_contains(self, text, sub_text, case_insensitive):
         if case_insensitive:
@@ -13724,7 +13724,7 @@ class WAS_Debug_Number_to_Console:
     OUTPUT_NODE = True
     FUNCTION = "debug_to_console"
 
-    CATEGORY = "WAS Suite/Debug"
+    CATEGORY = "Updated Pack/WAS Suite/Debug"
 
     def debug_to_console(self, number, label):
         if label.strip() != '':
@@ -13749,7 +13749,7 @@ class WAS_Checkpoint_Loader:
     RETURN_NAMES = ("MODEL", "CLIP", "VAE", "NAME_STRING")
     FUNCTION = "load_checkpoint"
 
-    CATEGORY = "WAS Suite/Loaders/Advanced"
+    CATEGORY = "Updated Pack/WAS Suite/Loaders/Advanced"
 
     def load_checkpoint(self, config_name, ckpt_name, output_vae=True, output_clip=True):
         config_path = comfy_paths.get_full_path("configs", config_name)
@@ -13766,7 +13766,7 @@ class WAS_Checkpoint_Loader:
     RETURN_NAMES = ("MODEL", "CLIP", "VAE", "NAME_STRING")
     FUNCTION = "load_checkpoint"
 
-    CATEGORY = "WAS Suite/Loaders/Advanced"
+    CATEGORY = "Updated Pack/WAS Suite/Loaders/Advanced"
 
     def load_checkpoint(self, config_name, ckpt_name, output_vae=True, output_clip=True):
         config_path = comfy_paths.get_full_path("configs", config_name)
@@ -13783,7 +13783,7 @@ class WAS_Diffusers_Hub_Model_Loader:
     RETURN_NAMES = ("MODEL", "CLIP", "VAE", "NAME_STRING")
     FUNCTION = "load_hub_checkpoint"
 
-    CATEGORY = "WAS Suite/Loaders/Advanced"
+    CATEGORY = "Updated Pack/WAS Suite/Loaders/Advanced"
 
     def load_hub_checkpoint(self, repo_id=None, revision=None):
         if revision in ["", "None", "none", None]:
@@ -13812,7 +13812,7 @@ class WAS_Checkpoint_Loader_Simple:
     RETURN_NAMES = ("MODEL", "CLIP", "VAE", "NAME_STRING")
     FUNCTION = "load_checkpoint"
 
-    CATEGORY = "WAS Suite/Loaders"
+    CATEGORY = "Updated Pack/WAS Suite/Loaders"
 
     def load_checkpoint(self, ckpt_name, output_vae=True, output_clip=True):
         ckpt_path = comfy_paths.get_full_path("checkpoints", ckpt_name)
@@ -13831,7 +13831,7 @@ class WAS_Diffusers_Loader:
     RETURN_NAMES = ("MODEL", "CLIP", "VAE", "NAME_STRING")
     FUNCTION = "load_checkpoint"
 
-    CATEGORY = "WAS Suite/Loaders/Advanced"
+    CATEGORY = "Updated Pack/WAS Suite/Loaders/Advanced"
 
     def load_checkpoint(self, model_path, output_vae=True, output_clip=True):
         for search_path in comfy_paths.get_folder_paths("diffusers"):
@@ -13854,7 +13854,7 @@ class WAS_unCLIP_Checkpoint_Loader:
     RETURN_NAMES = ("MODEL", "CLIP", "VAE", "CLIP_VISION", "NAME_STRING")
     FUNCTION = "load_checkpoint"
 
-    CATEGORY = "WAS Suite/Loaders"
+    CATEGORY = "Updated Pack/WAS Suite/Loaders"
 
     def load_checkpoint(self, ckpt_name, output_vae=True, output_clip=True):
         ckpt_path = comfy_paths.get_full_path("checkpoints", ckpt_name)
@@ -13880,7 +13880,7 @@ class WAS_Lora_Input_Switch:
     RETURN_TYPES = ("MODEL", "CLIP")
     FUNCTION = "lora_input_switch"
 
-    CATEGORY = "WAS Suite/Logic"
+    CATEGORY = "Updated Pack/WAS Suite/Logic"
 
     def lora_input_switch(self, model_a, clip_a, model_b, clip_b, boolean=True):
         if boolean:
@@ -13907,7 +13907,7 @@ class WAS_Lora_Loader:
     RETURN_NAMES = ("MODEL", "CLIP", "NAME_STRING")
     FUNCTION = "load_lora"
 
-    CATEGORY = "WAS Suite/Loaders"
+    CATEGORY = "Updated Pack/WAS Suite/Loaders"
 
     def load_lora(self, model, clip, lora_name, strength_model, strength_clip):
         if strength_model == 0 and strength_clip == 0:
@@ -13939,7 +13939,7 @@ class WAS_Upscale_Model_Loader:
     RETURN_NAMES = ("UPSCALE_MODEL","MODEL_NAME_TEXT")
     FUNCTION = "load_model"
 
-    CATEGORY = "WAS Suite/Loaders"
+    CATEGORY = "Updated Pack/WAS Suite/Loaders"
 
     def load_model(self, model_name):
         model_path = comfy_paths.get_full_path("upscale_models", model_name)
@@ -13982,7 +13982,7 @@ class WAS_Video_Writer:
     RETURN_NAMES = ("IMAGE_PASS","filepath_text","filename_text")
     FUNCTION = "write_video"
 
-    CATEGORY = "WAS Suite/Animation/Writer"
+    CATEGORY = "Updated Pack/WAS Suite/Animation/Writer"
 
     def write_video(self, image, transition_frames=10, image_delay_sec=10, fps=30, max_size=512,
                             output_path="./ComfyUI/output", filename="morph", codec="H264"):
@@ -14079,7 +14079,7 @@ class WAS_Create_Video_From_Path:
     RETURN_NAMES = ("filepath_text","filename_text")
     FUNCTION = "create_video_from_path"
 
-    CATEGORY = "WAS Suite/Animation"
+    CATEGORY = "Updated Pack/WAS Suite/Animation"
 
     def create_video_from_path(self, transition_frames=10, image_delay_sec=10, fps=30, max_size=512,
                             input_path="./ComfyUI/input", output_path="./ComfyUI/output", filename="morph", codec="H264"):
@@ -14151,7 +14151,7 @@ class WAS_Video_Frame_Dump:
     RETURN_NAMES = ("output_path","processed_count")
     FUNCTION = "dump_video_frames"
 
-    CATEGORY = "WAS Suite/Animation"
+    CATEGORY = "Updated Pack/WAS Suite/Animation"
 
     def dump_video_frames(self, video_path, output_path, prefix="fame_", extension="png",filenumber_digits=-1):
 
@@ -14206,7 +14206,7 @@ class WAS_Cache:
     FUNCTION = "cache_input"
     OUTPUT_NODE = True
 
-    CATEGORY = "WAS Suite/IO"
+    CATEGORY = "Updated Pack/WAS Suite/IO"
 
     def cache_input(self, latent_suffix="_cache", image_suffix="_cache", conditioning_suffix="_cache", output_path=None, latent=None, image=None, conditioning=None):
 
@@ -14270,7 +14270,7 @@ class WAS_Load_Cache:
     RETURN_NAMES = ("LATENT","IMAGE","CONDITIONING")
     FUNCTION = "load_cache"
 
-    CATEGORY = "WAS Suite/IO"
+    CATEGORY = "Updated Pack/WAS Suite/IO"
 
     def load_cache(self, latent_path=None, image_path=None, conditioning_path=None):
 
@@ -14324,7 +14324,7 @@ class WAS_Samples_Passthrough_Stat_System:
     RETURN_NAMES = ("samples",)
     FUNCTION = "stat_system"
 
-    CATEGORY = "WAS Suite/Debug"
+    CATEGORY = "Updated Pack/WAS Suite/Debug"
 
     def stat_system(self, samples):
 
@@ -14374,7 +14374,7 @@ class WAS_Integer_Place_Counter:
     RETURN_NAMES = ("INT_PLACES",)
     FUNCTION = "count_places"
 
-    CATEGORY = "WAS Suite/Integer"
+    CATEGORY = "Updated Pack/WAS Suite/Integer"
 
     def count_places(self, int_input):
         output = len(str(int_input))
@@ -14384,226 +14384,450 @@ class WAS_Integer_Place_Counter:
 
 # NODE MAPPING
 NODE_CLASS_MAPPINGS = {
-    "BLIP Model Loader": WAS_BLIP_Model_Loader,
-    "Blend Latents": WAS_Blend_Latents,
-    "Bus Node": WAS_Bus,
-    "Cache Node": WAS_Cache,
-    "Checkpoint Loader": WAS_Checkpoint_Loader,
-    "Checkpoint Loader (Simple)": WAS_Checkpoint_Loader_Simple,
-    "CLIPTextEncode (NSP)": WAS_NSP_CLIPTextEncoder,
-    "CLIP Input Switch": WAS_CLIP_Input_Switch,
-    "CLIP Vision Input Switch": WAS_CLIP_Vision_Input_Switch,
-    "Conditioning Input Switch": WAS_Conditioning_Input_Switch,
-    "Constant Number": WAS_Constant_Number,
-    "Create Grid Image": WAS_Image_Grid_Image,
-    "Create Grid Image from Batch": WAS_Image_Grid_Image_Batch,
-    "Create Morph Image": WAS_Image_Morph_GIF,
-    "Create Morph Image from Path": WAS_Image_Morph_GIF_By_Path,
-    "Create Video from Path": WAS_Create_Video_From_Path,
-    "CLIPSeg Masking": WAS_CLIPSeg,
-    "CLIPSeg Model Loader": WAS_CLIPSeg_Model_Loader,
-    "CLIPSeg Batch Masking": WAS_CLIPSeg_Batch,
-    "Convert Masks to Images": WAS_Mask_To_Image,
-    "Control Net Model Input Switch": WAS_Control_Net_Input_Switch,
-    "Debug Number to Console": WAS_Debug_Number_to_Console,
-    "Dictionary to Console": WAS_Dictionary_To_Console,
-    "Diffusers Model Loader": WAS_Diffusers_Loader,
-    "Diffusers Hub Model Down-Loader": WAS_Diffusers_Hub_Model_Loader,
-    "Export API": WAS_Export_API,
-    "Latent Input Switch": WAS_Latent_Input_Switch,
-    "Load Cache": WAS_Load_Cache,
-    "Logic Boolean": WAS_Boolean,
-    "Logic Boolean Primitive": WAS_Boolean_Primitive,
-    "Logic Comparison OR": WAS_Logical_OR,
-    "Logic Comparison AND": WAS_Logical_AND,
-    "Logic Comparison XOR": WAS_Logical_XOR,
-    "Logic NOT": WAS_Logical_NOT,
-    "Lora Loader": WAS_Lora_Loader,
-    "Hex to HSL": WAS_Hex_to_HSL,
-    "HSL to Hex": WAS_HSL_to_Hex,
-    "Image SSAO (Ambient Occlusion)": WAS_Image_Ambient_Occlusion,
-    "Image SSDO (Direct Occlusion)": WAS_Image_Direct_Occlusion,
-    "Image Analyze": WAS_Image_Analyze,
-    "Image Aspect Ratio": WAS_Image_Aspect_Ratio,
-    "Image Batch": WAS_Image_Batch,
-    "Image Blank": WAS_Image_Blank,
-    "Image Blend by Mask": WAS_Image_Blend_Mask,
-    "Image Blend": WAS_Image_Blend,
-    "Image Blending Mode": WAS_Image_Blending_Mode,
-    "Image Bloom Filter": WAS_Image_Bloom_Filter,
-    "Image Canny Filter": WAS_Canny_Filter,
-    "Image Chromatic Aberration": WAS_Image_Chromatic_Aberration,
-    "Image Color Palette": WAS_Image_Color_Palette,
-    "Image Crop Face": WAS_Image_Crop_Face,
-    "Image Crop Location": WAS_Image_Crop_Location,
-    "Image Crop Square Location": WAS_Image_Crop_Square_Location,
-    "Image Displacement Warp": WAS_Image_Displacement_Warp,
-    "Image Lucy Sharpen": WAS_Lucy_Sharpen,
-    "Image Paste Face": WAS_Image_Paste_Face_Crop,
-    "Image Paste Crop": WAS_Image_Paste_Crop,
-    "Image Paste Crop by Location": WAS_Image_Paste_Crop_Location,
-    "Image Pixelate": WAS_Image_Pixelate,
-    "Image Power Noise": WAS_Image_Power_Noise,
-    "Image Dragan Photography Filter": WAS_Dragon_Filter,
-    "Image Edge Detection Filter": WAS_Image_Edge,
-    "Image Film Grain": WAS_Film_Grain,
-    "Image Filter Adjustments": WAS_Image_Filters,
-    "Image Flip": WAS_Image_Flip,
-    "Image Gradient Map": WAS_Image_Gradient_Map,
-    "Image Generate Gradient": WAS_Image_Generate_Gradient,
-    "Image High Pass Filter": WAS_Image_High_Pass_Filter,
-    "Image History Loader": WAS_Image_History,
-    "Image Input Switch": WAS_Image_Input_Switch,
-    "Image Levels Adjustment": WAS_Image_Levels,
-    "Image Load": WAS_Load_Image,
-    "Image Median Filter": WAS_Image_Median_Filter,
-    "Image Mix RGB Channels": WAS_Image_RGB_Merge,
-    "Image Monitor Effects Filter": WAS_Image_Monitor_Distortion_Filter,
-    "Image Nova Filter": WAS_Image_Nova_Filter,
-    "Image Padding": WAS_Image_Padding,
-    "Image Perlin Noise": WAS_Image_Perlin_Noise,
-    "Image Rembg (Remove Background)": WAS_Remove_Rembg,
-    "Image Perlin Power Fractal": WAS_Image_Perlin_Power_Fractal,
-    "Image Remove Background (Alpha)": WAS_Remove_Background,
-    "Image Remove Color": WAS_Image_Remove_Color,
-    "Image Resize": WAS_Image_Rescale,
-    "Image Rotate": WAS_Image_Rotate,
-    "Image Rotate Hue": WAS_Image_Rotate_Hue,
-    "Image Send HTTP": WAS_Image_Send_HTTP,
-    "Image Save": WAS_Image_Save,
-    "Image Seamless Texture": WAS_Image_Make_Seamless,
-    "Image Select Channel": WAS_Image_Select_Channel,
-    "Image Select Color": WAS_Image_Select_Color,
-    "Image Shadows and Highlights": WAS_Shadow_And_Highlight_Adjustment,
-    "Image Size to Number": WAS_Image_Size_To_Number,
-    "Image Stitch": WAS_Image_Stitch,
-    "Image Style Filter": WAS_Image_Style_Filter,
-    "Image Threshold": WAS_Image_Threshold,
-    "Image Tiled": WAS_Image_Tile_Batch,
-    "Image Transpose": WAS_Image_Transpose,
-    "Image fDOF Filter": WAS_Image_fDOF,
-    "Image to Latent Mask": WAS_Image_To_Mask,
-    "Image to Noise": WAS_Image_To_Noise,
-    "Image to Seed": WAS_Image_To_Seed,
-    "Images to RGB": WAS_Images_To_RGB,
-    "Images to Linear": WAS_Images_To_Linear,
-    "Integer place counter": WAS_Integer_Place_Counter,
-    "Image Voronoi Noise Filter": WAS_Image_Voronoi_Noise_Filter,
-    "KSampler (WAS)": WAS_KSampler,
-    "KSampler Cycle": WAS_KSampler_Cycle,
-    "Latent Batch": WAS_Latent_Batch,
-    "Latent Noise Injection": WAS_Latent_Noise,
-    "Latent Size to Number": WAS_Latent_Size_To_Number,
-    "Latent Upscale by Factor (WAS)": WAS_Latent_Upscale,
-    "Load Image Batch": WAS_Load_Image_Batch,
-    "Load Text File": WAS_Text_Load_From_File,
-    "Load Lora": WAS_Lora_Loader,
-    "Lora Input Switch": WAS_Lora_Input_Switch,
-    "Masks Add": WAS_Mask_Add,
-    "Masks Subtract": WAS_Mask_Subtract,
-    "Mask Arbitrary Region": WAS_Mask_Arbitrary_Region,
-    "Mask Batch to Mask": WAS_Mask_Batch_to_Single_Mask,
-    "Mask Batch": WAS_Mask_Batch,
-    "Mask Ceiling Region": WAS_Mask_Ceiling_Region,
-    "Mask Crop Dominant Region": WAS_Mask_Crop_Dominant_Region,
-    "Mask Crop Minority Region": WAS_Mask_Crop_Minority_Region,
-    "Mask Crop Region": WAS_Mask_Crop_Region,
-    "Mask Paste Region": WAS_Mask_Paste_Region,
-    "Mask Dilate Region": WAS_Mask_Dilate_Region,
-    "Mask Dominant Region": WAS_Mask_Dominant_Region,
-    "Mask Erode Region": WAS_Mask_Erode_Region,
-    "Mask Fill Holes": WAS_Mask_Fill_Region,
-    "Mask Floor Region": WAS_Mask_Floor_Region,
-    "Mask Gaussian Region": WAS_Mask_Gaussian_Region,
-    "Mask Invert": WAS_Mask_Invert,
-    "Mask Minority Region": WAS_Mask_Minority_Region,
-    "Mask Rect Area": WAS_Mask_Rect_Area,
-    "Mask Rect Area (Advanced)": WAS_Mask_Rect_Area_Advanced,
-    "Mask Smooth Region": WAS_Mask_Smooth_Region,
-    "Mask Threshold Region": WAS_Mask_Threshold_Region,
-    "Masks Combine Regions": WAS_Mask_Combine,
-    "Masks Combine Batch": WAS_Mask_Combine_Batch,
-    "MiDaS Model Loader": MiDaS_Model_Loader,
-    "MiDaS Depth Approximation": MiDaS_Depth_Approx,
-    "MiDaS Mask Image": MiDaS_Background_Foreground_Removal,
-    "Model Input Switch": WAS_Model_Input_Switch,
-    "Number Counter": WAS_Number_Counter,
-    "Number Operation": WAS_Number_Operation,
-    "Number to Float": WAS_Number_To_Float,
-    "Number Input Switch": WAS_Number_Input_Switch,
-    "Number Input Condition": WAS_Number_Input_Condition,
-    "Number Multiple Of": WAS_Number_Multiple_Of,
-    "Number PI": WAS_Number_PI,
-    "Number to Int": WAS_Number_To_Int,
-    "Number to Seed": WAS_Number_To_Seed,
-    "Number to String": WAS_Number_To_String,
-    "Number to Text": WAS_Number_To_Text,
-    "Boolean To Text": WAS_Boolean_To_Text,
-    "Prompt Styles Selector": WAS_Prompt_Styles_Selector,
-    "Prompt Multiple Styles Selector": WAS_Prompt_Multiple_Styles_Selector,
-    "Random Number": WAS_Random_Number,
-    "Save Text File": WAS_Text_Save,
-    "Seed": WAS_Seed,
-    "Tensor Batch to Image": WAS_Tensor_Batch_to_Image,
-    "BLIP Analyze Image": WAS_BLIP_Analyze_Image,
-    "SAM Model Loader": WAS_SAM_Model_Loader,
-    "SAM Parameters": WAS_SAM_Parameters,
-    "SAM Parameters Combine": WAS_SAM_Combine_Parameters,
-    "SAM Image Mask": WAS_SAM_Image_Mask,
-    "Samples Passthrough (Stat System)": WAS_Samples_Passthrough_Stat_System,
-    "String to Text": WAS_String_To_Text,
-    "Image Bounds": WAS_Image_Bounds,
-    "Inset Image Bounds": WAS_Inset_Image_Bounds,
-    "Bounded Image Blend": WAS_Bounded_Image_Blend,
-    "Bounded Image Blend with Mask": WAS_Bounded_Image_Blend_With_Mask,
-    "Bounded Image Crop": WAS_Bounded_Image_Crop,
-    "Bounded Image Crop with Mask": WAS_Bounded_Image_Crop_With_Mask,
-    "Image Bounds to Console": WAS_Image_Bounds_to_Console,
-    "Text Dictionary Update": WAS_Dictionary_Update,
-    "Text Dictionary Get": WAS_Dictionary_Get,
-    "Text Dictionary Convert": WAS_Dictionary_Convert,
-    "Text Dictionary New": WAS_Dictionary_New,
-    "Text Dictionary Keys": WAS_Dictionary_Keys,
-    "Text Dictionary To Text": WAS_Dictionary_to_Text,
-    "Text Add Tokens": WAS_Text_Add_Tokens,
-    "Text Add Token by Input": WAS_Text_Add_Token_Input,
-    "Text Compare": WAS_Text_Compare,
-    "Text Concatenate": WAS_Text_Concatenate,
-    "Text File History Loader": WAS_Text_File_History,
-    "Text Find and Replace by Dictionary": WAS_Search_and_Replace_Dictionary,
-    "Text Find and Replace Input": WAS_Search_and_Replace_Input,
-    "Text Find and Replace": WAS_Search_and_Replace,
-    "Text Find": WAS_Find,
-    "Text Input Switch": WAS_Text_Input_Switch,
-    "Text List": WAS_Text_List,
-    "Text List Concatenate": WAS_Text_List_Concatenate,
-    "Text List to Text": WAS_Text_List_to_Text,
-    "Text Load Line From File": WAS_Text_Load_Line_From_File,
-    "Text Multiline": WAS_Text_Multiline,
-    "Text Multiline (Code Compatible)": WAS_Text_Multiline_Raw,
-    "Text Parse A1111 Embeddings": WAS_Text_Parse_Embeddings_By_Name,
-    "Text Parse Noodle Soup Prompts": WAS_Text_Parse_NSP,
-    "Text Parse Tokens": WAS_Text_Parse_Tokens,
-    "Text Random Line": WAS_Text_Random_Line,
-    "Text Random Prompt": WAS_Text_Random_Prompt,
-    "Text String": WAS_Text_String,
-    "Text Contains": WAS_Text_Contains,
-    "Text Shuffle": WAS_Text_Shuffle,
-    "Text Sort": WAS_Text_Sort,
-    "Text to Conditioning": WAS_Text_to_Conditioning,
-    "Text to Console": WAS_Text_to_Console,
-    "Text to Number": WAS_Text_To_Number,
-    "Text to String": WAS_Text_To_String,
-    "Text String Truncate": WAS_Text_String_Truncate,
-    "True Random.org Number Generator": WAS_True_Random_Number,
-    "unCLIP Checkpoint Loader": WAS_unCLIP_Checkpoint_Loader,
-    "Upscale Model Loader": WAS_Upscale_Model_Loader,
-    "Upscale Model Switch": WAS_Upscale_Model_Input_Switch,
-    "Write to GIF": WAS_Image_Morph_GIF_Writer,
-    "Write to Video": WAS_Video_Writer,
-    "VAE Input Switch": WAS_VAE_Input_Switch,
-    "Video Dump Frames": WAS_Video_Frame_Dump,
-    "CLIPSEG2": CLIPSeg2
+    "BLIP Model Loader_UpdatedPack": WAS_BLIP_Model_Loader,
+    "Blend Latents_UpdatedPack": WAS_Blend_Latents,
+    "Bus Node_UpdatedPack": WAS_Bus,
+    "Cache Node_UpdatedPack": WAS_Cache,
+    "Checkpoint Loader_UpdatedPack": WAS_Checkpoint_Loader,
+    "Checkpoint Loader (Simple)_UpdatedPack": WAS_Checkpoint_Loader_Simple,
+    "CLIPTextEncode (NSP)_UpdatedPack": WAS_NSP_CLIPTextEncoder,
+    "CLIP Input Switch_UpdatedPack": WAS_CLIP_Input_Switch,
+    "CLIP Vision Input Switch_UpdatedPack": WAS_CLIP_Vision_Input_Switch,
+    "Conditioning Input Switch_UpdatedPack": WAS_Conditioning_Input_Switch,
+    "Constant Number_UpdatedPack": WAS_Constant_Number,
+    "Create Grid Image_UpdatedPack": WAS_Image_Grid_Image,
+    "Create Grid Image from Batch_UpdatedPack": WAS_Image_Grid_Image_Batch,
+    "Create Morph Image_UpdatedPack": WAS_Image_Morph_GIF,
+    "Create Morph Image from Path_UpdatedPack": WAS_Image_Morph_GIF_By_Path,
+    "Create Video from Path_UpdatedPack": WAS_Create_Video_From_Path,
+    "CLIPSeg Masking_UpdatedPack": WAS_CLIPSeg,
+    "CLIPSeg Model Loader_UpdatedPack": WAS_CLIPSeg_Model_Loader,
+    "CLIPSeg Batch Masking_UpdatedPack": WAS_CLIPSeg_Batch,
+    "Convert Masks to Images_UpdatedPack": WAS_Mask_To_Image,
+    "Control Net Model Input Switch_UpdatedPack": WAS_Control_Net_Input_Switch,
+    "Debug Number to Console_UpdatedPack": WAS_Debug_Number_to_Console,
+    "Dictionary to Console_UpdatedPack": WAS_Dictionary_To_Console,
+    "Diffusers Model Loader_UpdatedPack": WAS_Diffusers_Loader,
+    "Diffusers Hub Model Down-Loader_UpdatedPack": WAS_Diffusers_Hub_Model_Loader,
+    "Export API_UpdatedPack": WAS_Export_API,
+    "Latent Input Switch_UpdatedPack": WAS_Latent_Input_Switch,
+    "Load Cache_UpdatedPack": WAS_Load_Cache,
+    "Logic Boolean_UpdatedPack": WAS_Boolean,
+    "Logic Boolean Primitive_UpdatedPack": WAS_Boolean_Primitive,
+    "Logic Comparison OR_UpdatedPack": WAS_Logical_OR,
+    "Logic Comparison AND_UpdatedPack": WAS_Logical_AND,
+    "Logic Comparison XOR_UpdatedPack": WAS_Logical_XOR,
+    "Logic NOT_UpdatedPack": WAS_Logical_NOT,
+    "Lora Loader_UpdatedPack": WAS_Lora_Loader,
+    "Hex to HSL_UpdatedPack": WAS_Hex_to_HSL,
+    "HSL to Hex_UpdatedPack": WAS_HSL_to_Hex,
+    "Image SSAO (Ambient Occlusion)_UpdatedPack": WAS_Image_Ambient_Occlusion,
+    "Image SSDO (Direct Occlusion)_UpdatedPack": WAS_Image_Direct_Occlusion,
+    "Image Analyze_UpdatedPack": WAS_Image_Analyze,
+    "Image Aspect Ratio_UpdatedPack": WAS_Image_Aspect_Ratio,
+    "Image Batch_UpdatedPack": WAS_Image_Batch,
+    "Image Blank_UpdatedPack": WAS_Image_Blank,
+    "Image Blend by Mask_UpdatedPack": WAS_Image_Blend_Mask,
+    "Image Blend_UpdatedPack": WAS_Image_Blend,
+    "Image Blending Mode_UpdatedPack": WAS_Image_Blending_Mode,
+    "Image Bloom Filter_UpdatedPack": WAS_Image_Bloom_Filter,
+    "Image Canny Filter_UpdatedPack": WAS_Canny_Filter,
+    "Image Chromatic Aberration_UpdatedPack": WAS_Image_Chromatic_Aberration,
+    "Image Color Palette_UpdatedPack": WAS_Image_Color_Palette,
+    "Image Crop Face_UpdatedPack": WAS_Image_Crop_Face,
+    "Image Crop Location_UpdatedPack": WAS_Image_Crop_Location,
+    "Image Crop Square Location_UpdatedPack": WAS_Image_Crop_Square_Location,
+    "Image Displacement Warp_UpdatedPack": WAS_Image_Displacement_Warp,
+    "Image Lucy Sharpen_UpdatedPack": WAS_Lucy_Sharpen,
+    "Image Paste Face_UpdatedPack": WAS_Image_Paste_Face_Crop,
+    "Image Paste Crop_UpdatedPack": WAS_Image_Paste_Crop,
+    "Image Paste Crop by Location_UpdatedPack": WAS_Image_Paste_Crop_Location,
+    "Image Pixelate_UpdatedPack": WAS_Image_Pixelate,
+    "Image Power Noise_UpdatedPack": WAS_Image_Power_Noise,
+    "Image Dragan Photography Filter_UpdatedPack": WAS_Dragon_Filter,
+    "Image Edge Detection Filter_UpdatedPack": WAS_Image_Edge,
+    "Image Film Grain_UpdatedPack": WAS_Film_Grain,
+    "Image Filter Adjustments_UpdatedPack": WAS_Image_Filters,
+    "Image Flip_UpdatedPack": WAS_Image_Flip,
+    "Image Gradient Map_UpdatedPack": WAS_Image_Gradient_Map,
+    "Image Generate Gradient_UpdatedPack": WAS_Image_Generate_Gradient,
+    "Image High Pass Filter_UpdatedPack": WAS_Image_High_Pass_Filter,
+    "Image History Loader_UpdatedPack": WAS_Image_History,
+    "Image Input Switch_UpdatedPack": WAS_Image_Input_Switch,
+    "Image Levels Adjustment_UpdatedPack": WAS_Image_Levels,
+    "Image Load_UpdatedPack": WAS_Load_Image,
+    "Image Median Filter_UpdatedPack": WAS_Image_Median_Filter,
+    "Image Mix RGB Channels_UpdatedPack": WAS_Image_RGB_Merge,
+    "Image Monitor Effects Filter_UpdatedPack": WAS_Image_Monitor_Distortion_Filter,
+    "Image Nova Filter_UpdatedPack": WAS_Image_Nova_Filter,
+    "Image Padding_UpdatedPack": WAS_Image_Padding,
+    "Image Perlin Noise_UpdatedPack": WAS_Image_Perlin_Noise,
+    "Image Rembg (Remove Background)_UpdatedPack": WAS_Remove_Rembg,
+    "Image Perlin Power Fractal_UpdatedPack": WAS_Image_Perlin_Power_Fractal,
+    "Image Remove Background (Alpha)_UpdatedPack": WAS_Remove_Background,
+    "Image Remove Color_UpdatedPack": WAS_Image_Remove_Color,
+    "Image Resize_UpdatedPack": WAS_Image_Rescale,
+    "Image Rotate_UpdatedPack": WAS_Image_Rotate,
+    "Image Rotate Hue_UpdatedPack": WAS_Image_Rotate_Hue,
+    "Image Send HTTP_UpdatedPack": WAS_Image_Send_HTTP,
+    "Image Save_UpdatedPack": WAS_Image_Save,
+    "Image Seamless Texture_UpdatedPack": WAS_Image_Make_Seamless,
+    "Image Select Channel_UpdatedPack": WAS_Image_Select_Channel,
+    "Image Select Color_UpdatedPack": WAS_Image_Select_Color,
+    "Image Shadows and Highlights_UpdatedPack": WAS_Shadow_And_Highlight_Adjustment,
+    "Image Size to Number_UpdatedPack": WAS_Image_Size_To_Number,
+    "Image Stitch_UpdatedPack": WAS_Image_Stitch,
+    "Image Style Filter_UpdatedPack": WAS_Image_Style_Filter,
+    "Image Threshold_UpdatedPack": WAS_Image_Threshold,
+    "Image Tiled_UpdatedPack": WAS_Image_Tile_Batch,
+    "Image Transpose_UpdatedPack": WAS_Image_Transpose,
+    "Image fDOF Filter_UpdatedPack": WAS_Image_fDOF,
+    "Image to Latent Mask_UpdatedPack": WAS_Image_To_Mask,
+    "Image to Noise_UpdatedPack": WAS_Image_To_Noise,
+    "Image to Seed_UpdatedPack": WAS_Image_To_Seed,
+    "Images to RGB_UpdatedPack": WAS_Images_To_RGB,
+    "Images to Linear_UpdatedPack": WAS_Images_To_Linear,
+    "Integer place counter_UpdatedPack": WAS_Integer_Place_Counter,
+    "Image Voronoi Noise Filter_UpdatedPack": WAS_Image_Voronoi_Noise_Filter,
+    "KSampler (WAS)_UpdatedPack": WAS_KSampler,
+    "KSampler Cycle_UpdatedPack": WAS_KSampler_Cycle,
+    "Latent Batch_UpdatedPack": WAS_Latent_Batch,
+    "Latent Noise Injection_UpdatedPack": WAS_Latent_Noise,
+    "Latent Size to Number_UpdatedPack": WAS_Latent_Size_To_Number,
+    "Latent Upscale by Factor (WAS)_UpdatedPack": WAS_Latent_Upscale,
+    "Load Image Batch_UpdatedPack": WAS_Load_Image_Batch,
+    "Load Text File_UpdatedPack": WAS_Text_Load_From_File,
+    "Load Lora_UpdatedPack": WAS_Lora_Loader,
+    "Lora Input Switch_UpdatedPack": WAS_Lora_Input_Switch,
+    "Masks Add_UpdatedPack": WAS_Mask_Add,
+    "Masks Subtract_UpdatedPack": WAS_Mask_Subtract,
+    "Mask Arbitrary Region_UpdatedPack": WAS_Mask_Arbitrary_Region,
+    "Mask Batch to Mask_UpdatedPack": WAS_Mask_Batch_to_Single_Mask,
+    "Mask Batch_UpdatedPack": WAS_Mask_Batch,
+    "Mask Ceiling Region_UpdatedPack": WAS_Mask_Ceiling_Region,
+    "Mask Crop Dominant Region_UpdatedPack": WAS_Mask_Crop_Dominant_Region,
+    "Mask Crop Minority Region_UpdatedPack": WAS_Mask_Crop_Minority_Region,
+    "Mask Crop Region_UpdatedPack": WAS_Mask_Crop_Region,
+    "Mask Paste Region_UpdatedPack": WAS_Mask_Paste_Region,
+    "Mask Dilate Region_UpdatedPack": WAS_Mask_Dilate_Region,
+    "Mask Dominant Region_UpdatedPack": WAS_Mask_Dominant_Region,
+    "Mask Erode Region_UpdatedPack": WAS_Mask_Erode_Region,
+    "Mask Fill Holes_UpdatedPack": WAS_Mask_Fill_Region,
+    "Mask Floor Region_UpdatedPack": WAS_Mask_Floor_Region,
+    "Mask Gaussian Region_UpdatedPack": WAS_Mask_Gaussian_Region,
+    "Mask Invert_UpdatedPack": WAS_Mask_Invert,
+    "Mask Minority Region_UpdatedPack": WAS_Mask_Minority_Region,
+    "Mask Rect Area_UpdatedPack": WAS_Mask_Rect_Area,
+    "Mask Rect Area (Advanced)_UpdatedPack": WAS_Mask_Rect_Area_Advanced,
+    "Mask Smooth Region_UpdatedPack": WAS_Mask_Smooth_Region,
+    "Mask Threshold Region_UpdatedPack": WAS_Mask_Threshold_Region,
+    "Masks Combine Regions_UpdatedPack": WAS_Mask_Combine,
+    "Masks Combine Batch_UpdatedPack": WAS_Mask_Combine_Batch,
+    "MiDaS Model Loader_UpdatedPack": MiDaS_Model_Loader,
+    "MiDaS Depth Approximation_UpdatedPack": MiDaS_Depth_Approx,
+    "MiDaS Mask Image_UpdatedPack": MiDaS_Background_Foreground_Removal,
+    "Model Input Switch_UpdatedPack": WAS_Model_Input_Switch,
+    "Number Counter_UpdatedPack": WAS_Number_Counter,
+    "Number Operation_UpdatedPack": WAS_Number_Operation,
+    "Number to Float_UpdatedPack": WAS_Number_To_Float,
+    "Number Input Switch_UpdatedPack": WAS_Number_Input_Switch,
+    "Number Input Condition_UpdatedPack": WAS_Number_Input_Condition,
+    "Number Multiple Of_UpdatedPack": WAS_Number_Multiple_Of,
+    "Number PI_UpdatedPack": WAS_Number_PI,
+    "Number to Int_UpdatedPack": WAS_Number_To_Int,
+    "Number to Seed_UpdatedPack": WAS_Number_To_Seed,
+    "Number to String_UpdatedPack": WAS_Number_To_String,
+    "Number to Text_UpdatedPack": WAS_Number_To_Text,
+    "Boolean To Text_UpdatedPack": WAS_Boolean_To_Text,
+    "Prompt Styles Selector_UpdatedPack": WAS_Prompt_Styles_Selector,
+    "Prompt Multiple Styles Selector_UpdatedPack": WAS_Prompt_Multiple_Styles_Selector,
+    "Random Number_UpdatedPack": WAS_Random_Number,
+    "Save Text File_UpdatedPack": WAS_Text_Save,
+    "Seed_UpdatedPack": WAS_Seed,
+    "Tensor Batch to Image_UpdatedPack": WAS_Tensor_Batch_to_Image,
+    "BLIP Analyze Image_UpdatedPack": WAS_BLIP_Analyze_Image,
+    "SAM Model Loader_UpdatedPack": WAS_SAM_Model_Loader,
+    "SAM Parameters_UpdatedPack": WAS_SAM_Parameters,
+    "SAM Parameters Combine_UpdatedPack": WAS_SAM_Combine_Parameters,
+    "SAM Image Mask_UpdatedPack": WAS_SAM_Image_Mask,
+    "Samples Passthrough (Stat System)_UpdatedPack": WAS_Samples_Passthrough_Stat_System,
+    "String to Text_UpdatedPack": WAS_String_To_Text,
+    "Image Bounds_UpdatedPack": WAS_Image_Bounds,
+    "Inset Image Bounds_UpdatedPack": WAS_Inset_Image_Bounds,
+    "Bounded Image Blend_UpdatedPack": WAS_Bounded_Image_Blend,
+    "Bounded Image Blend with Mask_UpdatedPack": WAS_Bounded_Image_Blend_With_Mask,
+    "Bounded Image Crop_UpdatedPack": WAS_Bounded_Image_Crop,
+    "Bounded Image Crop with Mask_UpdatedPack": WAS_Bounded_Image_Crop_With_Mask,
+    "Image Bounds to Console_UpdatedPack": WAS_Image_Bounds_to_Console,
+    "Text Dictionary Update_UpdatedPack": WAS_Dictionary_Update,
+    "Text Dictionary Get_UpdatedPack": WAS_Dictionary_Get,
+    "Text Dictionary Convert_UpdatedPack": WAS_Dictionary_Convert,
+    "Text Dictionary New_UpdatedPack": WAS_Dictionary_New,
+    "Text Dictionary Keys_UpdatedPack": WAS_Dictionary_Keys,
+    "Text Dictionary To Text_UpdatedPack": WAS_Dictionary_to_Text,
+    "Text Add Tokens_UpdatedPack": WAS_Text_Add_Tokens,
+    "Text Add Token by Input_UpdatedPack": WAS_Text_Add_Token_Input,
+    "Text Compare_UpdatedPack": WAS_Text_Compare,
+    "Text Concatenate_UpdatedPack": WAS_Text_Concatenate,
+    "Text File History Loader_UpdatedPack": WAS_Text_File_History,
+    "Text Find and Replace by Dictionary_UpdatedPack": WAS_Search_and_Replace_Dictionary,
+    "Text Find and Replace Input_UpdatedPack": WAS_Search_and_Replace_Input,
+    "Text Find and Replace_UpdatedPack": WAS_Search_and_Replace,
+    "Text Find_UpdatedPack": WAS_Find,
+    "Text Input Switch_UpdatedPack": WAS_Text_Input_Switch,
+    "Text List_UpdatedPack": WAS_Text_List,
+    "Text List Concatenate_UpdatedPack": WAS_Text_List_Concatenate,
+    "Text List to Text_UpdatedPack": WAS_Text_List_to_Text,
+    "Text Load Line From File_UpdatedPack": WAS_Text_Load_Line_From_File,
+    "Text Multiline_UpdatedPack": WAS_Text_Multiline,
+    "Text Multiline (Code Compatible)_UpdatedPack": WAS_Text_Multiline_Raw,
+    "Text Parse A1111 Embeddings_UpdatedPack": WAS_Text_Parse_Embeddings_By_Name,
+    "Text Parse Noodle Soup Prompts_UpdatedPack": WAS_Text_Parse_NSP,
+    "Text Parse Tokens_UpdatedPack": WAS_Text_Parse_Tokens,
+    "Text Random Line_UpdatedPack": WAS_Text_Random_Line,
+    "Text Random Prompt_UpdatedPack": WAS_Text_Random_Prompt,
+    "Text String_UpdatedPack": WAS_Text_String,
+    "Text Contains_UpdatedPack": WAS_Text_Contains,
+    "Text Shuffle_UpdatedPack": WAS_Text_Shuffle,
+    "Text Sort_UpdatedPack": WAS_Text_Sort,
+    "Text to Conditioning_UpdatedPack": WAS_Text_to_Conditioning,
+    "Text to Console_UpdatedPack": WAS_Text_to_Console,
+    "Text to Number_UpdatedPack": WAS_Text_To_Number,
+    "Text to String_UpdatedPack": WAS_Text_To_String,
+    "Text String Truncate_UpdatedPack": WAS_Text_String_Truncate,
+    "True Random.org Number Generator_UpdatedPack": WAS_True_Random_Number,
+    "unCLIP Checkpoint Loader_UpdatedPack": WAS_unCLIP_Checkpoint_Loader,
+    "Upscale Model Loader_UpdatedPack": WAS_Upscale_Model_Loader,
+    "Upscale Model Switch_UpdatedPack": WAS_Upscale_Model_Input_Switch,
+    "Write to GIF_UpdatedPack": WAS_Image_Morph_GIF_Writer,
+    "Write to Video_UpdatedPack": WAS_Video_Writer,
+    "VAE Input Switch_UpdatedPack": WAS_VAE_Input_Switch,
+    "Video Dump Frames_UpdatedPack": WAS_Video_Frame_Dump,
+    "CLIPSEG2_UpdatedPack": CLIPSeg2
+}
+
+NODE_DISPLAY_NAME_MAPPINGS = {
+    "BLIP Model Loader_UpdatedPack": "BLIP Model Loader [Updated Pack]",
+    "Blend Latents_UpdatedPack": "Blend Latents [Updated Pack]",
+    "Bus Node_UpdatedPack": "Bus Node [Updated Pack]",
+    "Cache Node_UpdatedPack": "Cache Node [Updated Pack]",
+    "Checkpoint Loader_UpdatedPack": "Checkpoint Loader [Updated Pack]",
+    "Checkpoint Loader (Simple)_UpdatedPack": "Checkpoint Loader (Simple) [Updated Pack]",
+    "CLIPTextEncode (NSP)_UpdatedPack": "CLIPTextEncode (NSP) [Updated Pack]",
+    "CLIP Input Switch_UpdatedPack": "CLIP Input Switch [Updated Pack]",
+    "CLIP Vision Input Switch_UpdatedPack": "CLIP Vision Input Switch [Updated Pack]",
+    "Conditioning Input Switch_UpdatedPack": "Conditioning Input Switch [Updated Pack]",
+    "Constant Number_UpdatedPack": "Constant Number [Updated Pack]",
+    "Create Grid Image_UpdatedPack": "Create Grid Image [Updated Pack]",
+    "Create Grid Image from Batch_UpdatedPack": "Create Grid Image from Batch [Updated Pack]",
+    "Create Morph Image_UpdatedPack": "Create Morph Image [Updated Pack]",
+    "Create Morph Image from Path_UpdatedPack": "Create Morph Image from Path [Updated Pack]",
+    "Create Video from Path_UpdatedPack": "Create Video from Path [Updated Pack]",
+    "CLIPSeg Masking_UpdatedPack": "CLIPSeg Masking [Updated Pack]",
+    "CLIPSeg Model Loader_UpdatedPack": "CLIPSeg Model Loader [Updated Pack]",
+    "CLIPSeg Batch Masking_UpdatedPack": "CLIPSeg Batch Masking [Updated Pack]",
+    "Convert Masks to Images_UpdatedPack": "Convert Masks to Images [Updated Pack]",
+    "Control Net Model Input Switch_UpdatedPack": "Control Net Model Input Switch [Updated Pack]",
+    "Debug Number to Console_UpdatedPack": "Debug Number to Console [Updated Pack]",
+    "Dictionary to Console_UpdatedPack": "Dictionary to Console [Updated Pack]",
+    "Diffusers Model Loader_UpdatedPack": "Diffusers Model Loader [Updated Pack]",
+    "Diffusers Hub Model Down-Loader_UpdatedPack": "Diffusers Hub Model Down-Loader [Updated Pack]",
+    "Export API_UpdatedPack": "Export API [Updated Pack]",
+    "Latent Input Switch_UpdatedPack": "Latent Input Switch [Updated Pack]",
+    "Load Cache_UpdatedPack": "Load Cache [Updated Pack]",
+    "Logic Boolean_UpdatedPack": "Logic Boolean [Updated Pack]",
+    "Logic Boolean Primitive_UpdatedPack": "Logic Boolean Primitive [Updated Pack]",
+    "Logic Comparison OR_UpdatedPack": "Logic Comparison OR [Updated Pack]",
+    "Logic Comparison AND_UpdatedPack": "Logic Comparison AND [Updated Pack]",
+    "Logic Comparison XOR_UpdatedPack": "Logic Comparison XOR [Updated Pack]",
+    "Logic NOT_UpdatedPack": "Logic NOT [Updated Pack]",
+    "Lora Loader_UpdatedPack": "Lora Loader [Updated Pack]",
+    "Hex to HSL_UpdatedPack": "Hex to HSL [Updated Pack]",
+    "HSL to Hex_UpdatedPack": "HSL to Hex [Updated Pack]",
+    "Image SSAO (Ambient Occlusion)_UpdatedPack": "Image SSAO (Ambient Occlusion) [Updated Pack]",
+    "Image SSDO (Direct Occlusion)_UpdatedPack": "Image SSDO (Direct Occlusion) [Updated Pack]",
+    "Image Analyze_UpdatedPack": "Image Analyze [Updated Pack]",
+    "Image Aspect Ratio_UpdatedPack": "Image Aspect Ratio [Updated Pack]",
+    "Image Batch_UpdatedPack": "Image Batch [Updated Pack]",
+    "Image Blank_UpdatedPack": "Image Blank [Updated Pack]",
+    "Image Blend by Mask_UpdatedPack": "Image Blend by Mask [Updated Pack]",
+    "Image Blend_UpdatedPack": "Image Blend [Updated Pack]",
+    "Image Blending Mode_UpdatedPack": "Image Blending Mode [Updated Pack]",
+    "Image Bloom Filter_UpdatedPack": "Image Bloom Filter [Updated Pack]",
+    "Image Canny Filter_UpdatedPack": "Image Canny Filter [Updated Pack]",
+    "Image Chromatic Aberration_UpdatedPack": "Image Chromatic Aberration [Updated Pack]",
+    "Image Color Palette_UpdatedPack": "Image Color Palette [Updated Pack]",
+    "Image Crop Face_UpdatedPack": "Image Crop Face [Updated Pack]",
+    "Image Crop Location_UpdatedPack": "Image Crop Location [Updated Pack]",
+    "Image Crop Square Location_UpdatedPack": "Image Crop Square Location [Updated Pack]",
+    "Image Displacement Warp_UpdatedPack": "Image Displacement Warp [Updated Pack]",
+    "Image Lucy Sharpen_UpdatedPack": "Image Lucy Sharpen [Updated Pack]",
+    "Image Paste Face_UpdatedPack": "Image Paste Face [Updated Pack]",
+    "Image Paste Crop_UpdatedPack": "Image Paste Crop [Updated Pack]",
+    "Image Paste Crop by Location_UpdatedPack": "Image Paste Crop by Location [Updated Pack]",
+    "Image Pixelate_UpdatedPack": "Image Pixelate [Updated Pack]",
+    "Image Power Noise_UpdatedPack": "Image Power Noise [Updated Pack]",
+    "Image Dragan Photography Filter_UpdatedPack": "Image Dragan Photography Filter [Updated Pack]",
+    "Image Edge Detection Filter_UpdatedPack": "Image Edge Detection Filter [Updated Pack]",
+    "Image Film Grain_UpdatedPack": "Image Film Grain [Updated Pack]",
+    "Image Filter Adjustments_UpdatedPack": "Image Filter Adjustments [Updated Pack]",
+    "Image Flip_UpdatedPack": "Image Flip [Updated Pack]",
+    "Image Gradient Map_UpdatedPack": "Image Gradient Map [Updated Pack]",
+    "Image Generate Gradient_UpdatedPack": "Image Generate Gradient [Updated Pack]",
+    "Image High Pass Filter_UpdatedPack": "Image High Pass Filter [Updated Pack]",
+    "Image History Loader_UpdatedPack": "Image History Loader [Updated Pack]",
+    "Image Input Switch_UpdatedPack": "Image Input Switch [Updated Pack]",
+    "Image Levels Adjustment_UpdatedPack": "Image Levels Adjustment [Updated Pack]",
+    "Image Load_UpdatedPack": "Image Load [Updated Pack]",
+    "Image Median Filter_UpdatedPack": "Image Median Filter [Updated Pack]",
+    "Image Mix RGB Channels_UpdatedPack": "Image Mix RGB Channels [Updated Pack]",
+    "Image Monitor Effects Filter_UpdatedPack": "Image Monitor Effects Filter [Updated Pack]",
+    "Image Nova Filter_UpdatedPack": "Image Nova Filter [Updated Pack]",
+    "Image Padding_UpdatedPack": "Image Padding [Updated Pack]",
+    "Image Perlin Noise_UpdatedPack": "Image Perlin Noise [Updated Pack]",
+    "Image Rembg (Remove Background)_UpdatedPack": "Image Rembg (Remove Background) [Updated Pack]",
+    "Image Perlin Power Fractal_UpdatedPack": "Image Perlin Power Fractal [Updated Pack]",
+    "Image Remove Background (Alpha)_UpdatedPack": "Image Remove Background (Alpha) [Updated Pack]",
+    "Image Remove Color_UpdatedPack": "Image Remove Color [Updated Pack]",
+    "Image Resize_UpdatedPack": "Image Resize [Updated Pack]",
+    "Image Rotate_UpdatedPack": "Image Rotate [Updated Pack]",
+    "Image Rotate Hue_UpdatedPack": "Image Rotate Hue [Updated Pack]",
+    "Image Send HTTP_UpdatedPack": "Image Send HTTP [Updated Pack]",
+    "Image Save_UpdatedPack": "Image Save [Updated Pack]",
+    "Image Seamless Texture_UpdatedPack": "Image Seamless Texture [Updated Pack]",
+    "Image Select Channel_UpdatedPack": "Image Select Channel [Updated Pack]",
+    "Image Select Color_UpdatedPack": "Image Select Color [Updated Pack]",
+    "Image Shadows and Highlights_UpdatedPack": "Image Shadows and Highlights [Updated Pack]",
+    "Image Size to Number_UpdatedPack": "Image Size to Number [Updated Pack]",
+    "Image Stitch_UpdatedPack": "Image Stitch [Updated Pack]",
+    "Image Style Filter_UpdatedPack": "Image Style Filter [Updated Pack]",
+    "Image Threshold_UpdatedPack": "Image Threshold [Updated Pack]",
+    "Image Tiled_UpdatedPack": "Image Tiled [Updated Pack]",
+    "Image Transpose_UpdatedPack": "Image Transpose [Updated Pack]",
+    "Image fDOF Filter_UpdatedPack": "Image fDOF Filter [Updated Pack]",
+    "Image to Latent Mask_UpdatedPack": "Image to Latent Mask [Updated Pack]",
+    "Image to Noise_UpdatedPack": "Image to Noise [Updated Pack]",
+    "Image to Seed_UpdatedPack": "Image to Seed [Updated Pack]",
+    "Images to RGB_UpdatedPack": "Images to RGB [Updated Pack]",
+    "Images to Linear_UpdatedPack": "Images to Linear [Updated Pack]",
+    "Integer place counter_UpdatedPack": "Integer place counter [Updated Pack]",
+    "Image Voronoi Noise Filter_UpdatedPack": "Image Voronoi Noise Filter [Updated Pack]",
+    "KSampler (WAS)_UpdatedPack": "KSampler (WAS) [Updated Pack]",
+    "KSampler Cycle_UpdatedPack": "KSampler Cycle [Updated Pack]",
+    "Latent Batch_UpdatedPack": "Latent Batch [Updated Pack]",
+    "Latent Noise Injection_UpdatedPack": "Latent Noise Injection [Updated Pack]",
+    "Latent Size to Number_UpdatedPack": "Latent Size to Number [Updated Pack]",
+    "Latent Upscale by Factor (WAS)_UpdatedPack": "Latent Upscale by Factor (WAS) [Updated Pack]",
+    "Load Image Batch_UpdatedPack": "Load Image Batch [Updated Pack]",
+    "Load Text File_UpdatedPack": "Load Text File [Updated Pack]",
+    "Load Lora_UpdatedPack": "Load Lora [Updated Pack]",
+    "Lora Input Switch_UpdatedPack": "Lora Input Switch [Updated Pack]",
+    "Masks Add_UpdatedPack": "Masks Add [Updated Pack]",
+    "Masks Subtract_UpdatedPack": "Masks Subtract [Updated Pack]",
+    "Mask Arbitrary Region_UpdatedPack": "Mask Arbitrary Region [Updated Pack]",
+    "Mask Batch to Mask_UpdatedPack": "Mask Batch to Mask [Updated Pack]",
+    "Mask Batch_UpdatedPack": "Mask Batch [Updated Pack]",
+    "Mask Ceiling Region_UpdatedPack": "Mask Ceiling Region [Updated Pack]",
+    "Mask Crop Dominant Region_UpdatedPack": "Mask Crop Dominant Region [Updated Pack]",
+    "Mask Crop Minority Region_UpdatedPack": "Mask Crop Minority Region [Updated Pack]",
+    "Mask Crop Region_UpdatedPack": "Mask Crop Region [Updated Pack]",
+    "Mask Paste Region_UpdatedPack": "Mask Paste Region [Updated Pack]",
+    "Mask Dilate Region_UpdatedPack": "Mask Dilate Region [Updated Pack]",
+    "Mask Dominant Region_UpdatedPack": "Mask Dominant Region [Updated Pack]",
+    "Mask Erode Region_UpdatedPack": "Mask Erode Region [Updated Pack]",
+    "Mask Fill Holes_UpdatedPack": "Mask Fill Holes [Updated Pack]",
+    "Mask Floor Region_UpdatedPack": "Mask Floor Region [Updated Pack]",
+    "Mask Gaussian Region_UpdatedPack": "Mask Gaussian Region [Updated Pack]",
+    "Mask Invert_UpdatedPack": "Mask Invert [Updated Pack]",
+    "Mask Minority Region_UpdatedPack": "Mask Minority Region [Updated Pack]",
+    "Mask Rect Area_UpdatedPack": "Mask Rect Area [Updated Pack]",
+    "Mask Rect Area (Advanced)_UpdatedPack": "Mask Rect Area (Advanced) [Updated Pack]",
+    "Mask Smooth Region_UpdatedPack": "Mask Smooth Region [Updated Pack]",
+    "Mask Threshold Region_UpdatedPack": "Mask Threshold Region [Updated Pack]",
+    "Masks Combine Regions_UpdatedPack": "Masks Combine Regions [Updated Pack]",
+    "Masks Combine Batch_UpdatedPack": "Masks Combine Batch [Updated Pack]",
+    "MiDaS Model Loader_UpdatedPack": "MiDaS Model Loader [Updated Pack]",
+    "MiDaS Depth Approximation_UpdatedPack": "MiDaS Depth Approximation [Updated Pack]",
+    "MiDaS Mask Image_UpdatedPack": "MiDaS Mask Image [Updated Pack]",
+    "Model Input Switch_UpdatedPack": "Model Input Switch [Updated Pack]",
+    "Number Counter_UpdatedPack": "Number Counter [Updated Pack]",
+    "Number Operation_UpdatedPack": "Number Operation [Updated Pack]",
+    "Number to Float_UpdatedPack": "Number to Float [Updated Pack]",
+    "Number Input Switch_UpdatedPack": "Number Input Switch [Updated Pack]",
+    "Number Input Condition_UpdatedPack": "Number Input Condition [Updated Pack]",
+    "Number Multiple Of_UpdatedPack": "Number Multiple Of [Updated Pack]",
+    "Number PI_UpdatedPack": "Number PI [Updated Pack]",
+    "Number to Int_UpdatedPack": "Number to Int [Updated Pack]",
+    "Number to Seed_UpdatedPack": "Number to Seed [Updated Pack]",
+    "Number to String_UpdatedPack": "Number to String [Updated Pack]",
+    "Number to Text_UpdatedPack": "Number to Text [Updated Pack]",
+    "Boolean To Text_UpdatedPack": "Boolean To Text [Updated Pack]",
+    "Prompt Styles Selector_UpdatedPack": "Prompt Styles Selector [Updated Pack]",
+    "Prompt Multiple Styles Selector_UpdatedPack": "Prompt Multiple Styles Selector [Updated Pack]",
+    "Random Number_UpdatedPack": "Random Number [Updated Pack]",
+    "Save Text File_UpdatedPack": "Save Text File [Updated Pack]",
+    "Seed_UpdatedPack": "Seed [Updated Pack]",
+    "Tensor Batch to Image_UpdatedPack": "Tensor Batch to Image [Updated Pack]",
+    "BLIP Analyze Image_UpdatedPack": "BLIP Analyze Image [Updated Pack]",
+    "SAM Model Loader_UpdatedPack": "SAM Model Loader [Updated Pack]",
+    "SAM Parameters_UpdatedPack": "SAM Parameters [Updated Pack]",
+    "SAM Parameters Combine_UpdatedPack": "SAM Parameters Combine [Updated Pack]",
+    "SAM Image Mask_UpdatedPack": "SAM Image Mask [Updated Pack]",
+    "Samples Passthrough (Stat System)_UpdatedPack": "Samples Passthrough (Stat System) [Updated Pack]",
+    "String to Text_UpdatedPack": "String to Text [Updated Pack]",
+    "Image Bounds_UpdatedPack": "Image Bounds [Updated Pack]",
+    "Inset Image Bounds_UpdatedPack": "Inset Image Bounds [Updated Pack]",
+    "Bounded Image Blend_UpdatedPack": "Bounded Image Blend [Updated Pack]",
+    "Bounded Image Blend with Mask_UpdatedPack": "Bounded Image Blend with Mask [Updated Pack]",
+    "Bounded Image Crop_UpdatedPack": "Bounded Image Crop [Updated Pack]",
+    "Bounded Image Crop with Mask_UpdatedPack": "Bounded Image Crop with Mask [Updated Pack]",
+    "Image Bounds to Console_UpdatedPack": "Image Bounds to Console [Updated Pack]",
+    "Text Dictionary Update_UpdatedPack": "Text Dictionary Update [Updated Pack]",
+    "Text Dictionary Get_UpdatedPack": "Text Dictionary Get [Updated Pack]",
+    "Text Dictionary Convert_UpdatedPack": "Text Dictionary Convert [Updated Pack]",
+    "Text Dictionary New_UpdatedPack": "Text Dictionary New [Updated Pack]",
+    "Text Dictionary Keys_UpdatedPack": "Text Dictionary Keys [Updated Pack]",
+    "Text Dictionary To Text_UpdatedPack": "Text Dictionary To Text [Updated Pack]",
+    "Text Add Tokens_UpdatedPack": "Text Add Tokens [Updated Pack]",
+    "Text Add Token by Input_UpdatedPack": "Text Add Token by Input [Updated Pack]",
+    "Text Compare_UpdatedPack": "Text Compare [Updated Pack]",
+    "Text Concatenate_UpdatedPack": "Text Concatenate [Updated Pack]",
+    "Text File History Loader_UpdatedPack": "Text File History Loader [Updated Pack]",
+    "Text Find and Replace by Dictionary_UpdatedPack": "Text Find and Replace by Dictionary [Updated Pack]",
+    "Text Find and Replace Input_UpdatedPack": "Text Find and Replace Input [Updated Pack]",
+    "Text Find and Replace_UpdatedPack": "Text Find and Replace [Updated Pack]",
+    "Text Find_UpdatedPack": "Text Find [Updated Pack]",
+    "Text Input Switch_UpdatedPack": "Text Input Switch [Updated Pack]",
+    "Text List_UpdatedPack": "Text List [Updated Pack]",
+    "Text List Concatenate_UpdatedPack": "Text List Concatenate [Updated Pack]",
+    "Text List to Text_UpdatedPack": "Text List to Text [Updated Pack]",
+    "Text Load Line From File_UpdatedPack": "Text Load Line From File [Updated Pack]",
+    "Text Multiline_UpdatedPack": "Text Multiline [Updated Pack]",
+    "Text Multiline (Code Compatible)_UpdatedPack": "Text Multiline (Code Compatible) [Updated Pack]",
+    "Text Parse A1111 Embeddings_UpdatedPack": "Text Parse A1111 Embeddings [Updated Pack]",
+    "Text Parse Noodle Soup Prompts_UpdatedPack": "Text Parse Noodle Soup Prompts [Updated Pack]",
+    "Text Parse Tokens_UpdatedPack": "Text Parse Tokens [Updated Pack]",
+    "Text Random Line_UpdatedPack": "Text Random Line [Updated Pack]",
+    "Text Random Prompt_UpdatedPack": "Text Random Prompt [Updated Pack]",
+    "Text String_UpdatedPack": "Text String [Updated Pack]",
+    "Text Contains_UpdatedPack": "Text Contains [Updated Pack]",
+    "Text Shuffle_UpdatedPack": "Text Shuffle [Updated Pack]",
+    "Text Sort_UpdatedPack": "Text Sort [Updated Pack]",
+    "Text to Conditioning_UpdatedPack": "Text to Conditioning [Updated Pack]",
+    "Text to Console_UpdatedPack": "Text to Console [Updated Pack]",
+    "Text to Number_UpdatedPack": "Text to Number [Updated Pack]",
+    "Text to String_UpdatedPack": "Text to String [Updated Pack]",
+    "Text String Truncate_UpdatedPack": "Text String Truncate [Updated Pack]",
+    "True Random.org Number Generator_UpdatedPack": "True Random.org Number Generator [Updated Pack]",
+    "unCLIP Checkpoint Loader_UpdatedPack": "unCLIP Checkpoint Loader [Updated Pack]",
+    "Upscale Model Loader_UpdatedPack": "Upscale Model Loader [Updated Pack]",
+    "Upscale Model Switch_UpdatedPack": "Upscale Model Switch [Updated Pack]",
+    "Write to GIF_UpdatedPack": "Write to GIF [Updated Pack]",
+    "Write to Video_UpdatedPack": "Write to Video [Updated Pack]",
+    "VAE Input Switch_UpdatedPack": "VAE Input Switch [Updated Pack]",
+    "Video Dump Frames_UpdatedPack": "Video Dump Frames [Updated Pack]",
+    "CLIPSEG2_UpdatedPack": "CLIPSEG2 [Updated Pack]",
+    "CLIPTextEncode (BlenderNeko Advanced + NSP)_UpdatedPack": "CLIPTextEncode (BlenderNeko Advanced + NSP) [Updated Pack]"
 }
 
 #! EXTRA NODES
@@ -14633,7 +14857,7 @@ if os.path.exists(BKAdvCLIP_dir):
         RETURN_NAMES = ("conditioning", "parsed_text", "raw_text")
         OUTPUT_NODE = True
         FUNCTION = "encode"
-        CATEGORY = "WAS Suite/Conditioning"
+        CATEGORY = "Updated Pack/WAS Suite/Conditioning"
 
         DESCRIPTION = "A node based on Blenderneko's <a href='https://github.com/BlenderNeko/ComfyUI_ADV_CLIP_embw' target='_blank'>Advanced CLIP Text Encode</a>. This version adds the ability to use Noodle Soup Prompts and Wildcards. Wildcards are stored in WAS Node Suite root under the folder 'wildcards'. You can create the folder if it doesn't exist and move your wildcards into it."
         URL = {
@@ -14666,7 +14890,7 @@ if os.path.exists(BKAdvCLIP_dir):
             return ([[encode[0][0][0], encode[0][0][1]]], new_text, text, { "ui": { "string": new_text } } )
 
 
-    NODE_CLASS_MAPPINGS.update({"CLIPTextEncode (BlenderNeko Advanced + NSP)": WAS_AdvancedCLIPTextEncode})
+    NODE_CLASS_MAPPINGS.update({"CLIPTextEncode (BlenderNeko Advanced + NSP)_UpdatedPack": WAS_AdvancedCLIPTextEncode})
 
     if NODE_CLASS_MAPPINGS.__contains__("CLIPTextEncode (BlenderNeko Advanced + NSP)"):
         cstr('`CLIPTextEncode (BlenderNeko Advanced + NSP)` node enabled under `WAS Suite/Conditioning` menu.').msg.print()

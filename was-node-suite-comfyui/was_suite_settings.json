@@ -1,0 +1,12 @@
+{
+    "custom_tokens": {},
+    "Batch Counters": {
+        "Batch 001": 1
+    },
+    "Batch Paths": {
+        "Batch 001": "./output/"
+    },
+    "Batch Patterns": {
+        "Batch 001": "*"
+    }
+}

@@ -334,7 +334,7 @@ def get_or_load_model(model_type: str, device: str) -> object:
 class ImageRewardLoader:
     """Load ImageReward or CLIP scoring model."""
     
-    CATEGORY = "ImageReward"
+    CATEGORY = "Updated Pack/ImageReward"
     FUNCTION = "load_model"
     RETURN_TYPES = ("IMAGEREWARD_MODEL",)
     RETURN_NAMES = ("model",)
@@ -364,7 +364,7 @@ class ImageRewardLoader:
 class ImageRewardScore:
     """Score images against a text prompt."""
     
-    CATEGORY = "ImageReward"
+    CATEGORY = "Updated Pack/ImageReward"
     FUNCTION = "score_images"
     RETURN_TYPES = ("FLOAT", "STRING", "FLOAT")
     RETURN_NAMES = ("average_score", "scores_text", "scores_list")
@@ -415,7 +415,7 @@ class ImageRewardScore:
 class ImageRewardRank:
     """Rank multiple images by their alignment score with a text prompt."""
     
-    CATEGORY = "ImageReward"
+    CATEGORY = "Updated Pack/ImageReward"
     FUNCTION = "rank_images"
     RETURN_TYPES = ("IMAGE", "IMAGE", "INT", "STRING", "FLOAT")
     RETURN_NAMES = ("ranked_images", "best_image", "best_index", "ranking_info", "scores_list")
@@ -478,7 +478,7 @@ class ImageRewardRank:
 class ImageRewardBatchFilter:
     """Filter a batch of images based on score threshold."""
     
-    CATEGORY = "ImageReward"
+    CATEGORY = "Updated Pack/ImageReward"
     FUNCTION = "filter_images"
     RETURN_TYPES = ("IMAGE", "IMAGE", "INT", "STRING")
     RETURN_NAMES = ("passed_images", "failed_images", "passed_count", "filter_info")
@@ -582,15 +582,15 @@ class ImageRewardBatchFilter:
 
 # Node mappings for ComfyUI
 NODE_CLASS_MAPPINGS = {
-    "ImageRewardLoader": ImageRewardLoader,
-    "ImageRewardScore": ImageRewardScore,
-    "ImageRewardRank": ImageRewardRank,
-    "ImageRewardBatchFilter": ImageRewardBatchFilter,
+    "ImageRewardLoader_UpdatedPack": ImageRewardLoader,
+    "ImageRewardScore_UpdatedPack": ImageRewardScore,
+    "ImageRewardRank_UpdatedPack": ImageRewardRank,
+    "ImageRewardBatchFilter_UpdatedPack": ImageRewardBatchFilter,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "ImageRewardLoader": "ImageReward Loader",
-    "ImageRewardScore": "ImageReward Score",
-    "ImageRewardRank": "ImageReward Rank",
-    "ImageRewardBatchFilter": "ImageReward Batch Filter",
+    "ImageRewardLoader_UpdatedPack": "ImageReward Loader [Updated Pack]",
+    "ImageRewardScore_UpdatedPack": "ImageReward Score [Updated Pack]",
+    "ImageRewardRank_UpdatedPack": "ImageReward Rank [Updated Pack]",
+    "ImageRewardBatchFilter_UpdatedPack": "ImageReward Batch Filter [Updated Pack]",
 }

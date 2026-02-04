@@ -1,0 +1,15 @@
+[project]
+name = "comfyui_controlnet_aux_updated_pack"
+description = "Updated Pack: MeshGraphormer nodes from comfyui_controlnet_aux with transformers 5.0+ compatibility"
+
+version = "1.0.0"
+dependencies = ["torch", "importlib_metadata", "huggingface_hub", "scipy", "opencv-python>=4.7.0.72", "filelock", "numpy", "Pillow", "einops", "torchvision", "pyyaml", "scikit-image", "python-dateutil", "mediapipe", "fvcore", "yapf", "omegaconf", "ftfy", "addict", "yacs", "trimesh[easy]", "albumentations", "scikit-learn", "matplotlib", "transformers"]
+
+[project.urls]
+Repository = "https://github.com/Fannovel16/comfyui_controlnet_aux"
+
+[tool.comfy]
+PublisherId = "updated_pack"
+DisplayName = "comfyui_controlnet_aux Updated Pack"
+Icon = ""
+

@@ -20,7 +20,7 @@ class BertModelWarper(nn.Module):
         self.encoder = bert_model.encoder
         self.pooler = bert_model.pooler
 
-        self.get_extended_attention_mask = bert_model.get_extended_attention_mask
+        self._original_get_extended_attention_mask = bert_model.get_extended_attention_mask
         self.invert_attention_mask = bert_model.invert_attention_mask
         
         # Handle get_head_mask for different transformers versions
@@ -29,6 +29,31 @@ class BertModelWarper(nn.Module):
         else:
             # Implement get_head_mask for transformers versions where it's not directly accessible
             self.get_head_mask = self._get_head_mask
+    
+    def get_extended_attention_mask(self, attention_mask, input_shape, device=None, dtype=None):
+        """
+        Compatibility wrapper for get_extended_attention_mask across different transformers versions.
+        
+        In older transformers versions, the signature was:
+            get_extended_attention_mask(attention_mask, input_shape, device)
+        In newer versions (5.0.0+), the signature changed to:
+            get_extended_attention_mask(attention_mask, input_shape, dtype=None)
+        """
+        import inspect
+        sig = inspect.signature(self._original_get_extended_attention_mask)
+        params = list(sig.parameters.keys())
+        
+        # Check if the method accepts 'device' or 'dtype' parameter
+        if 'device' in params:
+            # Old transformers version - pass device as third positional argument
+            return self._original_get_extended_attention_mask(attention_mask, input_shape, device)
+        else:
+            # New transformers version - only pass attention_mask and input_shape
+            # dtype parameter is handled internally by the method
+            if dtype is not None:
+                return self._original_get_extended_attention_mask(attention_mask, input_shape, dtype=dtype)
+            else:
+                return self._original_get_extended_attention_mask(attention_mask, input_shape)
     
     def _get_head_mask(self, head_mask, num_hidden_layers, is_attention_chunked=False):
         """
