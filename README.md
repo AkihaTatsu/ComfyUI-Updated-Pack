@@ -8,25 +8,48 @@ This pack aggregates and maintains these popular ComfyUI node suites with necess
 
 This pack combines these excellent node suites:
 
-### 1. ComfyUI-ImageReward - Image Quality Scoring
+### 1. AIGODLIKE-ComfyUI-Studio - Loader Model Manager & UI Enhancements
+- **Original Author**: [AIGODLIKE](https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Studio)
+- **Description**: Enhanced loader interaction, model thumbnails, model notes/workflows, filtering and multilingual UI
+- **Updates**: Includes canvas interaction compatibility fix to prevent blank-canvas drag interference
+
+### 2. ComfyUI-ImageReward - Image Quality Scoring
 - **Original Author**: [ZaneA](https://github.com/ZaneA/ComfyUI-ImageReward)
 - **Description**: Score and rank images using ImageReward or CLIP models
 - **Updates**: Fixed transformers compatibility (handles pytorch_utils changes across versions)
 
-### 2. ComfyUI-SAM2 - Segment Anything 2
+### 3. ComfyUI-SAM2 - Segment Anything 2
 - **Original Author**: [neverbiasu](https://github.com/neverbiasu/ComfyUI-SAM2)
 - **Description**: Advanced image segmentation using SAM2 and GroundingDINO
 - **Updates**: Compatible with transformers 4.x and 5.0.0+ (uses AutoTokenizer and BERT models correctly)
 
-### 3. WAS Node Suite - Comprehensive Node Collection
+### 4. WAS Node Suite - Comprehensive Node Collection
 - **Original Author**: [WASasquatch](https://github.com/WASasquatch/was-node-suite-comfyui)
 - **Description**: An extensive suite with 180+ nodes for image processing, text processing, video, and more
 - **Updates**: Patched BLIP module for transformers compatibility (apply_chunking_to_forward, find_pruneable_heads_and_indices, prune_linear_layer)
 
-### 4. ComfyUI ControlNet Aux (MeshGraphormer Only)
+### 5. ComfyUI ControlNet Aux (MeshGraphormer Only)
 - **Original Author**: [Fannovel16](https://github.com/Fannovel16/comfyui_controlnet_aux)
 - **Description**: MeshGraphormer Hand Refiner for generating hand depth maps (stripped-down version with only MeshGraphormer nodes)
 - **Updates**: Patched custom_mesh_graphormer/modeling/bert/modeling_utils.py for transformers compatibility (prune_linear_layer, find_pruneable_heads_and_indices, apply_chunking_to_forward)
+
+## Package Activation Control
+
+`ComfyUI-Updated-Pack` provides `ACTIVATED_PACK.json` to control which bundled packs are enabled.
+
+Default file (all enabled):
+
+```json
+{
+   "AIGODLIKE-ComfyUI-Studio": true,
+   "ComfyUI-ImageReward": true,
+   "ComfyUI-SAM2": true,
+   "was-node-suite-comfyui": true,
+   "comfyui_controlnet_aux": true
+}
+```
+
+Set a pack to `false` to fully disable it at load time. For example, setting `"AIGODLIKE-ComfyUI-Studio": false` disables all Studio-related backend routes and frontend UI integration.
 
 ## Installation
 
@@ -155,6 +178,7 @@ The main update in this pack addresses breaking changes across transformers vers
 
 This pack is built upon the excellent work of:
 
+- **[AIGODLIKE](https://github.com/AIGODLIKE)** - [AIGODLIKE-ComfyUI-Studio](https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Studio)
 - **[ZaneA](https://github.com/ZaneA)** - [ComfyUI-ImageReward](https://github.com/ZaneA/ComfyUI-ImageReward)
 - **[neverbiasu](https://github.com/neverbiasu)** - [ComfyUI-SAM2](https://github.com/neverbiasu/ComfyUI-SAM2)
 - **[WASasquatch](https://github.com/WASasquatch)** - [was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui)
@@ -180,6 +204,7 @@ If you encounter any issues or have suggestions:
 
 ## Related Projects
 
+- [AIGODLIKE-ComfyUI-Studio](https://github.com/AIGODLIKE/AIGODLIKE-ComfyUI-Studio) - Advanced loader model manager and UI enhancements
 - [ComfyUI](https://github.com/comfyanonymous/ComfyUI) - The main ComfyUI repository
 - [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) - Easy node installation and management
 - [Segment Anything 2](https://github.com/facebookresearch/segment-anything-2) - SAM2 official repository
