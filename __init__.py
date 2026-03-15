@@ -13,7 +13,7 @@ __package_dir__ = os.path.dirname(os.path.abspath(__file__))
 if __package_dir__ not in sys.path:
     sys.path.insert(0, __package_dir__)
 
-ACTIVATION_FILE = os.path.join(__package_dir__, "ACTIVATED_PACK.json")
+ACTIVATION_FILE = os.path.join(__package_dir__, "ACTIVATED_PACKS.json")
 PACK_NAMES = (
     "AIGODLIKE-ComfyUI-Studio",
     "ComfyUI-ImageReward",
@@ -32,13 +32,13 @@ def _write_activation_file(config):
         with open(ACTIVATION_FILE, "w", encoding="utf-8") as f:
             json.dump(config, f, indent=2, ensure_ascii=False)
     except Exception as e:
-        raise RuntimeError(f"Failed to write ACTIVATED_PACK.json: {e}") from e
+        raise RuntimeError(f"Failed to write ACTIVATED_PACKS.json: {e}") from e
 
 
 def _rewrite_activation_file(reason: str):
     config = _build_activation_config()
     _write_activation_file(config)
-    print(f"[ComfyUI Updated Pack] Rewrote ACTIVATED_PACK.json: {reason}")
+    print(f"[ComfyUI Updated Pack] Rewrote ACTIVATED_PACKS.json: {reason}")
     return config
 
 
@@ -75,14 +75,14 @@ def _load_activation_config():
         return _rewrite_activation_file(f"invalid JSON or read error: {e}")
 
 
-ACTIVATED_PACK = _load_activation_config()
+ACTIVATED_PACKS = _load_activation_config()
 
 NODE_CLASS_MAPPINGS = {}
 NODE_DISPLAY_NAME_MAPPINGS = {}
 
 
 def _is_enabled(pack_name: str) -> bool:
-    return bool(ACTIVATED_PACK.get(pack_name, True))
+    return bool(ACTIVATED_PACKS.get(pack_name, True))
 
 
 # 1) AIGODLIKE-ComfyUI-Studio (first)
@@ -240,6 +240,6 @@ else:
     print("[ComfyUI Updated Pack] Skipped ControlNet Aux (disabled)")
 
 
-__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "ACTIVATED_PACK"]
+__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "ACTIVATED_PACKS"]
 
 print(f"[ComfyUI Updated Pack] Loaded {len(NODE_CLASS_MAPPINGS)} nodes total")

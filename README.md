@@ -35,7 +35,7 @@ This pack combines these excellent node suites:
 
 ## Package Activation Control
 
-`ComfyUI-Updated-Pack` provides `ACTIVATED_PACK.json` to control which bundled packs are enabled.
+`ComfyUI-Updated-Pack` provides `ACTIVATED_PACKS.json` to control which bundled packs are enabled.
 
 Default file (all enabled):
 
