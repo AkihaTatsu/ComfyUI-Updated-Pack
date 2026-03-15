@@ -18,6 +18,7 @@ PACK_NAMES = (
     "AIGODLIKE-ComfyUI-Studio",
     "ComfyUI-ImageReward",
     "ComfyUI-SAM2",
+    "ComfyUI_ExtendedImageFormats",
     "was-node-suite-comfyui",
     "comfyui_controlnet_aux",
 )
@@ -172,7 +173,36 @@ else:
     print("[ComfyUI Updated Pack] Skipped SAM2 (disabled)")
 
 
-# 4) WAS Node Suite
+# 4) Extended Image Formats
+if _is_enabled("ComfyUI_ExtendedImageFormats"):
+    try:
+        ext_formats_dir = os.path.join(__package_dir__, "ComfyUI_ExtendedImageFormats")
+        ext_formats_init_path = os.path.join(ext_formats_dir, "__init__.py")
+
+        spec = importlib.util.spec_from_file_location(
+            "comfyui_extended_image_formats_updated_pack",
+            ext_formats_init_path,
+            submodule_search_locations=[ext_formats_dir],
+        )
+        ext_formats_module = importlib.util.module_from_spec(spec)
+        ext_formats_module.__package__ = "comfyui_extended_image_formats_updated_pack"
+        sys.modules["comfyui_extended_image_formats_updated_pack"] = ext_formats_module
+
+        spec.loader.exec_module(ext_formats_module)
+
+        if hasattr(ext_formats_module, "NODE_CLASS_MAPPINGS"):
+            NODE_CLASS_MAPPINGS.update(ext_formats_module.NODE_CLASS_MAPPINGS)
+        if hasattr(ext_formats_module, "NODE_DISPLAY_NAME_MAPPINGS"):
+            NODE_DISPLAY_NAME_MAPPINGS.update(ext_formats_module.NODE_DISPLAY_NAME_MAPPINGS)
+
+        print("[ComfyUI Updated Pack] Successfully loaded ComfyUI_ExtendedImageFormats")
+    except Exception as e:
+        print(f"[ComfyUI Updated Pack] Warning: Failed to load ComfyUI_ExtendedImageFormats: {e}")
+else:
+    print("[ComfyUI Updated Pack] Skipped ComfyUI_ExtendedImageFormats (disabled)")
+
+
+# 5) WAS Node Suite
 if _is_enabled("was-node-suite-comfyui"):
     try:
         was_path = os.path.join(__package_dir__, "was-node-suite-comfyui", "WAS_Node_Suite.py")
@@ -191,7 +221,7 @@ else:
     print("[ComfyUI Updated Pack] Skipped WAS Node Suite (disabled)")
 
 
-# 5) ControlNet Aux (MeshGraphormer)
+# 6) ControlNet Aux (MeshGraphormer)
 if _is_enabled("comfyui_controlnet_aux"):
     try:
         controlnet_aux_dir = os.path.join(__package_dir__, "comfyui_controlnet_aux")

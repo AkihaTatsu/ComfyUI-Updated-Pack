@@ -2,6 +2,7 @@
   "AIGODLIKE-ComfyUI-Studio": true,
   "ComfyUI-ImageReward": true,
   "ComfyUI-SAM2": true,
+  "ComfyUI_ExtendedImageFormats": true,
   "was-node-suite-comfyui": true,
   "comfyui_controlnet_aux": true
 }

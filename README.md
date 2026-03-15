@@ -23,12 +23,17 @@ This pack combines these excellent node suites:
 - **Description**: Advanced image segmentation using SAM2 and GroundingDINO
 - **Updates**: Compatible with transformers 4.x and 5.0.0+ (uses AutoTokenizer and BERT models correctly)
 
-### 4. WAS Node Suite - Comprehensive Node Collection
+### 4. ComfyUI_ExtendedImageFormats - Extended Save Formats
+- **Original Author**: [kaan](https://github.com/kaanyalova/ComfyUI_ExtendedImageFormats)
+- **Description**: Save images in additional formats (webp, jpeg, avif, dds, and jxl when Pillow supports JXL codecs)
+- **Updates**: Integrated into Updated Pack node import flow and activation control; removed `jxlpy` dependency due to compatibility issues on some systems
+
+### 5. WAS Node Suite - Comprehensive Node Collection
 - **Original Author**: [WASasquatch](https://github.com/WASasquatch/was-node-suite-comfyui)
 - **Description**: An extensive suite with 180+ nodes for image processing, text processing, video, and more
 - **Updates**: Patched BLIP module for transformers compatibility (apply_chunking_to_forward, find_pruneable_heads_and_indices, prune_linear_layer)
 
-### 5. ComfyUI ControlNet Aux (MeshGraphormer Only)
+### 6. ComfyUI ControlNet Aux (MeshGraphormer Only)
 - **Original Author**: [Fannovel16](https://github.com/Fannovel16/comfyui_controlnet_aux)
 - **Description**: MeshGraphormer Hand Refiner for generating hand depth maps (stripped-down version with only MeshGraphormer nodes)
 - **Updates**: Patched custom_mesh_graphormer/modeling/bert/modeling_utils.py for transformers compatibility (prune_linear_layer, find_pruneable_heads_and_indices, apply_chunking_to_forward)
@@ -44,6 +49,7 @@ Default file (all enabled):
    "AIGODLIKE-ComfyUI-Studio": true,
    "ComfyUI-ImageReward": true,
    "ComfyUI-SAM2": true,
+   "ComfyUI_ExtendedImageFormats": true,
    "was-node-suite-comfyui": true,
    "comfyui_controlnet_aux": true
 }
@@ -115,6 +121,19 @@ Supported Models:
 
 Models are downloaded automatically to `ComfyUI/models/sam2/` and `ComfyUI/models/grounding-dino/`.
 
+### Extended Image Formats Nodes
+
+All nodes are in the `image` category.
+
+| Node | Description |
+|------|-------------|
+| **ExtendedSaveImage** | Save images in png/jpeg/webp/dds, with optional avif and jxl when codec support is available |
+| **DDSSaveImage** | Save DDS files with optional compression/mipmap settings and sidecar metadata |
+
+Compatibility Note:
+- `jxlpy` is intentionally removed from this pack due to incompatibility on some systems.
+- JXL availability is auto-detected via Pillow codec support at runtime.
+
 ### WAS Node Suite Nodes
 
 This suite contains 180+ nodes across multiple categories:
@@ -173,6 +192,8 @@ The main update in this pack addresses breaking changes across transformers vers
 - Created unified dependency management in the root folder
 - Added aggregated `__init__.py` for seamless node loading
 - Maintained original folder structures for easy updates
+- Integrated `ComfyUI_ExtendedImageFormats` into Updated Pack import/activation flow
+- Removed `jxlpy` dependency to avoid system-specific compatibility failures
 
 ## Credits
 
